@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resolve Property</title>
+  <title>Upgoing Projects</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -91,13 +91,13 @@
   
 
  
-     <!-- ======= Team Section ======= -->
-  <section id="team" class="team section-bg">
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> RESALE <span> PROPERTIES</span></h3>
+          <h3>Upgoing  <span>Projects </span></h3>
           <!-- <p>...</p> -->
         </div>
 
@@ -106,7 +106,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
               
               </div>
               <div class="member-info">
@@ -119,7 +119,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
                 
               </div>
               <div class="member-info">
@@ -132,7 +132,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
                 
               </div>
               <div class="member-info">
@@ -145,7 +145,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
                 
               </div>
               <div class="member-info">
@@ -159,7 +159,7 @@
 
       </div>
     </section><!-- End Team Section -->
- 
+
  
 </main><!-- End #main -->
 

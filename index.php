@@ -65,7 +65,15 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="aboutus.php">About Us</a></li>
-          <li><a class="nav-link scrollto" href="projects.php">Projects</a></li>
+          <li class="dropdown"><a href="#"><span>Property</span> </a>
+            <ul>
+              <li><a href="ongoing_projects.php">Ongoing Projects</a></li>
+             
+              <li><a href="upgoing_projects.php">Upgoing Projects </a></li>
+              
+            
+            </ul>
+          </li>
           <li><a class="nav-link scrollto " href="resale_property.php">Resale Property</a></li>
           <li><a class="nav-link scrollto" href="contactus.php">Contact Us</a></li>
         </ul>
@@ -79,11 +87,11 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Welcome to <span>ASENTERPRISES</span></h1>
-      
-      <!-- <div class="d-flex">
+      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-      </div> -->
+      </div>
     </div>
   </section><!-- End Hero -->
 
