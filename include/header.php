@@ -11,7 +11,7 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="aboutus.php">About Us</a></li>
           <li><a class="nav-link scrollto" href="projects.php">Projects</a></li>
-          <li><a class="nav-link scrollto " href="resale_property.php">Resolve Property</a></li>
+          <li><a class="nav-link scrollto " href="resale_property.php">Resale Property</a></li>
           <li><a class="nav-link scrollto" href="contactus.php">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

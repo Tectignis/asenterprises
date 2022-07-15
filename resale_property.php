@@ -66,7 +66,7 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="aboutus.php">About Us</a></li>
           <li><a class="nav-link scrollto" href="projects.php">Projects</a></li>
-          <li><a class="nav-link scrollto " href="resale_property.php">Resolve Property</a></li>
+          <li><a class="nav-link scrollto " href="resale_property.php">Resale Property</a></li>
           <li><a class="nav-link scrollto" href="contactus.php">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -82,28 +82,23 @@
   
 
  
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+     <!-- ======= Team Section ======= -->
+  <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Resolve Property</h2>
-          <h3>Our Hardworking <span>Team</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+          <!-- <h2>Team</h2> -->
+          <h3> RESALE <span> PROPERTIES</span></h3>
+          <!-- <p>...</p> -->
         </div>
 
         <div class="row">
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+              <div class="member-img" style="height:340px; width:420px;">
+                <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
+              
               </div>
               <div class="member-info">
                 <h4>Walter White</h4>
@@ -114,14 +109,9 @@
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+              <div class="member-img" style="height:340px; width:420px;">
+                <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
+                
               </div>
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
@@ -132,14 +122,9 @@
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+              <div class="member-img" style="height:340px; width:420px;">
+                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
+                
               </div>
               <div class="member-info">
                 <h4>William Anderson</h4>
@@ -150,14 +135,9 @@
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+              <div class="member-img" style="height:340px; width:420px;">
+                <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
+                
               </div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
@@ -170,7 +150,7 @@
 
       </div>
     </section><!-- End Team Section -->
-
+ 
  
 </main><!-- End #main -->
 
