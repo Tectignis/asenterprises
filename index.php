@@ -65,11 +65,11 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="aboutus.php">About Us</a></li>
-          <li class="dropdown"><a href="#"><span>Property</span> </a>
+          <li class="dropdown"><a href="#"><span>Projects</span> </a>
             <ul>
               <li><a href="ongoing_projects.php">Ongoing Projects</a></li>
              
-              <li><a href="upgoing_projects.php">Upgoing Projects </a></li>
+              <li><a href="upgoing_projects.php">Upcoming Projects </a></li>
               
             
             </ul>
@@ -90,7 +90,7 @@
       <h2>We are team of talented designers making websites with Bootstrap</h2>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
       </div>
     </div>
   </section><!-- End Hero -->

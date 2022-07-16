@@ -67,10 +67,10 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="aboutus.php">About Us</a></li>
           <li class="dropdown"><a href="#"><span>Property</span> </a>
-            <ul>
+            <ul>Projects
               <li><a href="ongoing_projects.php">Ongoing Projects</a></li>
              
-              <li><a href="upgoing_projects.php">Upgoing Projects </a></li>
+              <li><a href="upgoing_projects.php">Upcoming Projects </a></li>
               
             
             </ul>
