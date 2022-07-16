@@ -14,7 +14,7 @@
             <ul>
               <li><a href="ongoing_projects.php">Ongoing Projects</a></li>
              
-              <li><a href="upgoing_projects.php">Upcoming Projects </a></li>
+              <li><a href="upcoming_projects.php">Upcoming Projects </a></li>
               
             
             </ul>
