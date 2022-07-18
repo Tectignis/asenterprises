@@ -283,33 +283,13 @@ include("../_includes/sidebar.php");
 </div>
   </div>
  </div>
-           
-                    
-
-                    
-
-
+ 
 </div>
 </form>
 </div>
 </div>
 </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
