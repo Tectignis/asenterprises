@@ -41,20 +41,7 @@ include("include/config.php");
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
+
 
   <?php include("include/header.php"); ?>
 
@@ -79,7 +66,7 @@ include("include/config.php");
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <div class="icon"><i class='bx bx-trending-up'></i></div>
               <h4 class="title"><a href="">Maximum Choices</a></h4>
               <p class="description">4 Lac + & counting. New Properties every hour to help buyers and the right home</p>
             </div>
@@ -87,7 +74,7 @@ include("include/config.php");
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
+              <div class="icon"><i class='bx bxs-heart'></i></div>
               <h4 class="title"><a href="">Sellers Prefer Us</a></h4>
               <p class="description">4,000 new properties posted daily, making us the biggest platform to sell & rent properties</p>
             </div>
@@ -95,7 +82,7 @@ include("include/config.php");
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <div class="icon"><i class='bx bxs-book-alt'></i></div>
               <h4 class="title"><a href="">Expert Guidance</a></h4>
               <p class="description">Advice from the largest panel of industry experts to help you make smart property decisions</p>
             </div>
@@ -132,9 +119,15 @@ include("include/config.php");
                 <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
               
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+                <div class="col-8">
                 <h4>Aadity Shankar</h4>
                 <span>Panvel</span>
+                </div>
+                <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+               
               </div>
             </div>
           </div>
@@ -145,10 +138,15 @@ include("include/config.php");
                 <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Dosty Heritage</h4>
                 <span>Karanjade</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+</div>
+                </div>
             </div>
           </div>
 
@@ -158,10 +156,15 @@ include("include/config.php");
                 <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Aashiyana CHS</h4>
                 <span>Kamothe</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -171,10 +174,15 @@ include("include/config.php");
                 <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Madhuban </h4>
                 <span>New Mumbai</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+</div>
+                </div>
             </div>
           </div>
 
@@ -205,10 +213,15 @@ include("include/config.php");
                 <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
               
               </div>
-              <div class="member-info">
-                <h4>Shatkar Apartment</h4>
+              <div class="member-info d-flex">
+              <div class="col-8">
+                <h4>Shatkars Apartment</h4>
                 <span>Nerul</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -218,10 +231,15 @@ include("include/config.php");
                 <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Prabodhan</h4>
                 <span>Panvel</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -231,10 +249,15 @@ include("include/config.php");
                 <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>KrushnKunj</h4>
                 <span>Kamothe</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -244,10 +267,15 @@ include("include/config.php");
                 <img src="assets/img/team/img3.jpg" class="img-fluid" alt="" >
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Aashiyana</h4>
                 <span>New Mumbai</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -275,10 +303,15 @@ include("include/config.php");
                 <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
               
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Sai Vrindavan</h4>
                 <span>Karanjade</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -288,10 +321,15 @@ include("include/config.php");
                 <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Balaji Shraddha</h4>
                 <span>Kalamboli</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -301,10 +339,15 @@ include("include/config.php");
                 <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Vrundavan apartment</h4>
                 <span>Panvel</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -314,10 +357,15 @@ include("include/config.php");
                 <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Pavan Dhara</h4>
                 <span>Kamothe</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 

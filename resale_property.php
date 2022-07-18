@@ -41,21 +41,7 @@ include("include/config.php");
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
-
+ 
   
   <?php include("include/header.php"); ?>
 
@@ -67,26 +53,32 @@ include("include/config.php");
 
  
      <!-- ======= Team Section ======= -->
-  <section id="team" class="team section-bg">
+     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> RESALE <span> PROPERTIES</span></h3>
+          <h3> RESALE  <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
               
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+                <div class="col-8">
                 <h4>Aadity Shankar</h4>
                 <span>Panvel</span>
+                </div>
+                <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+               
               </div>
             </div>
           </div>
@@ -97,10 +89,15 @@ include("include/config.php");
                 <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Dosty Heritage</h4>
                 <span>Karanjade</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+</div>
+                </div>
             </div>
           </div>
 
@@ -110,10 +107,15 @@ include("include/config.php");
                 <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Aashiyana CHS</h4>
                 <span>Kamothe</span>
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+                </div>
+</div>
             </div>
           </div>
 
@@ -123,11 +125,15 @@ include("include/config.php");
                 <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
                 
               </div>
-              <div class="member-info">
+              <div class="member-info d-flex">
+              <div class="col-8">
                 <h4>Madhuban </h4>
                 <span>New Mumbai</span>
-                
               </div>
+              <div class="col-4">
+                <h6>400sq.ft</h6>
+</div>
+                </div>
             </div>
           </div>
 
