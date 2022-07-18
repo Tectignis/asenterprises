@@ -8,7 +8,7 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Upgoing Projects</title>
+  <title> Projects</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,6 +36,32 @@ include("include/config.php");
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+  .tag{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    background-image: linear-gradient(230deg,#7928ca,#106eea);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+  .price-box{
+    position: absolute;
+    top: 300px;
+    left: 170px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    background-image: linear-gradient(310deg,#7928ca,#106eea);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+  </style>
 </head>
 
 <body>
@@ -68,11 +94,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
-              
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Shatkars Apartment</h4>
+                <h4><a href="info.php">Shatkars Apartment</a></h4>
                 <span>Nerul</span>
               </div>
               <div class="col-4">
@@ -86,11 +117,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Prabodhan</h4>
+                <h4><a href="info.php">Prabodhan</a></h4>
                 <span>Panvel</span>
               </div>
               <div class="col-4">
@@ -104,11 +140,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>KrushnKunj</h4>
+                <h4><a href="info.php">KrushnKunj</a></h4>
                 <span>Kamothe</span>
               </div>
               <div class="col-4">
@@ -122,11 +163,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img3.jpg" class="img-fluid" alt="" >
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Aashiyana</h4>
+                <h4><a href="info.php">Aashiyana</a></h4>
                 <span>New Mumbai</span>
               </div>
               <div class="col-4">
@@ -156,11 +202,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
-              
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Sai Vrindavan</h4>
+                <h4><a href="info.php">Sai Vrindavan</a></h4>
                 <span>Karanjade</span>
               </div>
               <div class="col-4">
@@ -174,11 +225,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Balaji Shraddha</h4>
+                <h4><a href="info.php">Balaji Shraddha</a></h4>
                 <span>Kalamboli</span>
               </div>
               <div class="col-4">
@@ -192,11 +248,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Vrundavan apartment</h4>
+                <h4><a href="info.php">Vrundavan apartment</a></h4>
                 <span>Panvel</span>
               </div>
               <div class="col-4">
@@ -210,11 +271,16 @@ include("include/config.php");
             <div class="member">
               <div class="member-img" style="height:340px; width:420px;">
                 <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
-                
+                <div class="tag">
+              <span>Ready</span>
+              </div>
+                <div class="price-box">
+              <span>600000</span>
+              </div>
               </div>
               <div class="member-info d-flex">
               <div class="col-8">
-                <h4>Pavan Dhara</h4>
+                <h4><a href="info.php">Pavan Dhara</a></h4>
                 <span>Kamothe</span>
               </div>
               <div class="col-4">

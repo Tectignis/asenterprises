@@ -8,13 +8,14 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-4 footer-contact">
-          <h3>BizLand<span>.</span></h3>
+          <h3>ASENTERPRISES<span>.</span></h3>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+           Slyon Homes CHS, <br>
+           Shop No.6, Plot No.87,<br>
+            Sector -22, Kamothe-410208<br><br>
+            <strong>Phone:</strong> 8976635770<br>
+            <strong>Phone:</strong> 9221803185<br>
+            <strong>Email:</strong> aditismita927@gmail.com<br>
           </p>
         </div>
 
@@ -23,8 +24,8 @@
           <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="aboutus.php">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="ongoing_projects.php">Ongoing Projects</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="upgoing_projects.php">Upcoming Projects</a></li>
+           
+            <li><i class="bx bx-chevron-right"></i> <a href="projects.php"> Projects</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="resale_property.php">Resale Property</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="contactus.php">Contact Us</a></li>
           </ul>
@@ -57,7 +58,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">TECTIGNIS IT SOLUTION.</a>
+      Designed by <a href="https://bootstrapmade.com/">TECTIGNIS IT SOLUTIONS.</a>
     </div>
   </div>
 </footer><!-- End Footer -->
