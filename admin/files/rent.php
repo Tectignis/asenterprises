@@ -84,6 +84,7 @@ include("../_includes/sidebar.php");
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
                         <th>Property</th>
+                        <th>Action</th>
 
                       </tr>
                     </thead>
@@ -110,7 +111,19 @@ include("../_includes/sidebar.php");
                         </td>
                         <td>
                           <?php echo $arr['property'];?>
-                        </td>                
+                        </td>  
+                        <td>
+                       
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                        style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
+                                                               
+                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
+                       
+                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+                                     
+                                   
+                                                         
+                                               </td>               
     </tr>     
     
                                                  

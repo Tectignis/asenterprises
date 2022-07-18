@@ -4,7 +4,6 @@ session_start();
 if(!isset($_SESSION['id'])){
     header("location:index.php");
 } ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,12 +40,12 @@ include("../_includes/sidebar.php");
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Partners Table</h1>
+              <h1>Resale Table</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Partners Table</li>
+                <li class="breadcrumb-item active">Resale Table</li>
               </ol>
             </div>
           </div>
@@ -61,39 +60,65 @@ include("../_includes/sidebar.php");
 
               <!-- /.card -->
               <div class="card-tools my-3" style="text-align:end;">
-                <a class="btn btn-primary" href="partners_form.php" data-tt="tooltip" title=""
-                  data-original-title="Click here to Add Partners">Add Partners</a>
+                <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
+                  data-original-title="Click here to Add project">Add Project</a>
 
               </div>
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">List of Partners</h3>
+                  <h3 class="card-title">DataTable with default features</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
-                    <thead>
+                  <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Image</th>
+                      <th>Property ID</th>
+                        <th>Building Name</th>
+                        <th>Location</th>
+                        <th>Build-up Area</th>
+                        <th>Carpet Area</th>
+                        <th>Property</th>
+                        <th>Action</th>
 
                       </tr>
                     </thead>
                     <tbody>
                     <?php     
-    $sql=mysqli_query($conn,"select * from partners");
+    $sql=mysqli_query($conn,"select * from property where property='resale'");
     while($arr=mysqli_fetch_array($sql)){
     ?>
                       <tr>
                         <td>
-                          <?php echo $arr['name'];?>
+                          <?php echo $arr['property_id'];?>
                         </td>
                         <td>
-                          <?php echo $arr['image'];?>
+                          <?php echo $arr['building_name'];?>
                         </td>
+                        <td>
+                          <?php echo $arr['location'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['builtup_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['carpet_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['property'];?>
+                        </td>  
+                        <td>
                        
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                        style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
+                                                               
+                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                       
+                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+                                     
+                                   
+                                                         
+                                               </td>                    
     </tr>     
     
                                                  
@@ -101,6 +126,7 @@ include("../_includes/sidebar.php");
     } 
     ?>
                     </tbody>
+
                   </table>
                 </div>
                 <!-- /.card-body -->
@@ -119,7 +145,6 @@ include("../_includes/sidebar.php");
 
 include("../_includes/footer.php");
  ?>
-  </div>
 
   </div>
   <!-- ./wrapper -->
