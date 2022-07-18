@@ -1,10 +1,10 @@
 
 <?php
 include("../_includes/config.php");
-session_start();
-if(!isset($_SESSION['id'])){
-    header("location:index.php");
-} ?>
+// session_start();
+// if(!isset($_SESSION['id'])){
+//     header("location:index.php");
+// } ?>
 <!DOCTYPE html>
 <html lang="en">
 
