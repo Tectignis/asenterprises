@@ -1,3 +1,10 @@
+
+<?php
+include("../_includes/config.php");
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +29,11 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-
+   
+<?php
+include("../_includes/header.php");
+include("../_includes/sidebar.php");
+ ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -71,7 +82,28 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                    <?php     
+    $sql=mysqli_query($conn,"select * from testimonials");
+    while($arr=mysqli_fetch_array($sql)){
+    ?>
+                      <tr>
+                        <td>
+                          <?php echo $arr['name'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['image'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['description'];?>
+                        </td>
+                       
+                       
+    </tr>     
+    
+                                                 
+    <?php
+    } 
+    ?>
                     </tbody>
 
                   </table>
@@ -81,15 +113,17 @@
               <!-- /.card -->
             </div>
             <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        </div>
+            </div>
+            
         <!-- /.container-fluid -->
       </section>
       <!-- /.content -->
     </div>
 
+    <?php
 
+include("../_includes/footer.php");
+ ?>
   </div>
   <!-- ./wrapper -->
 

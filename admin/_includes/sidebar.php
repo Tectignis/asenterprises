@@ -67,7 +67,7 @@
         </li>
        
         <li class="nav-item">
-          <a href="contact.php" class="nav-link">
+          <a href="contactus.php" class="nav-link">
           <p>Contact us </p>
           </a>
         </li>
@@ -81,7 +81,7 @@
         </li>
      
       <li class="nav-item">
-        <a href="testinomial.php" class="nav-link">
+        <a href="testimonials.php" class="nav-link">
             <p>
             Testimonials
           </p>

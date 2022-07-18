@@ -1,3 +1,9 @@
+<?php
+include("../_includes/config.php");
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +28,10 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-
+    <?php
+include("../_includes/header.php");
+include("../_includes/sidebar.php");
+ ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -30,12 +39,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>DataTables</h1>
+              <h1>New Project</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">DataTables</li>
+                <li class="breadcrumb-item active">New Project</li>
               </ol>
             </div>
           </div>
@@ -56,23 +65,52 @@
               </div>
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">DataTable with default features</h3>
+                  <h3 class="card-title">List of New Project</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
-                    <thead>
+                  <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Area</th>
+                      <th>Property ID</th>
+                        <th>Building Name</th>
                         <th>Location</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Contact No</th>
+                        <th>Build-up Area</th>
+                        <th>Carpet Area</th>
+                        <th>Property</th>
+
                       </tr>
                     </thead>
                     <tbody>
-
+                    <?php     
+    $sql=mysqli_query($conn,"select * from property where property='project'");
+    while($arr=mysqli_fetch_array($sql)){
+    ?>
+                      <tr>
+                        <td>
+                          <?php echo $arr['property_id'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['building_name'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['location'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['builtup_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['carpet_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['property'];?>
+                        </td>                
+    </tr>     
+    
+                                                 
+    <?php
+    } 
+    ?>
                     </tbody>
 
                   </table>
@@ -89,7 +127,10 @@
       </section>
       <!-- /.content -->
     </div>
+    <?php
 
+include("../_includes/footer.php");
+ ?>
 
   </div>
   <!-- ./wrapper -->

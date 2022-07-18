@@ -1,3 +1,9 @@
+<?php
+include("../_includes/config.php");
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +28,10 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-
+    <?php
+include("../_includes/header.php");
+include("../_includes/sidebar.php");
+ ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -62,18 +71,47 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
-                    <thead>
+                  <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Area</th>
+                      <th>Property ID</th>
+                        <th>Building Name</th>
                         <th>Location</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Contact No</th>
+                        <th>Build-up Area</th>
+                        <th>Carpet Area</th>
+                        <th>Property</th>
+
                       </tr>
                     </thead>
                     <tbody>
-
+                    <?php     
+    $sql=mysqli_query($conn,"select * from property where property='resale'");
+    while($arr=mysqli_fetch_array($sql)){
+    ?>
+                      <tr>
+                        <td>
+                          <?php echo $arr['property_id'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['building_name'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['location'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['builtup_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['carpet_area'];?>
+                        </td>
+                        <td>
+                          <?php echo $arr['property'];?>
+                        </td>                
+    </tr>     
+    
+                                                 
+    <?php
+    } 
+    ?>
                     </tbody>
 
                   </table>
@@ -90,7 +128,10 @@
       </section>
       <!-- /.content -->
     </div>
+    <?php
 
+include("../_includes/footer.php");
+ ?>
 
   </div>
   <!-- ./wrapper -->

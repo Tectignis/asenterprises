@@ -1,3 +1,39 @@
+<?php
+include("../_includes/config.php");
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+} 
+    if(isset($_POST['submit']))
+    {
+        $building_name = $_POST['building_name'];
+        $property = $_POST['property'];
+        $price = $_POST['price'];
+        $carpet_area = $_POST['carpet_area'];
+        $builtup_area = $_POST['builtup_area'];
+        $location = $_POST['location'];
+        $description = $_POST['description'];
+        $water_source= $_POST['water_source'];
+        $furnishing = $_POST['radio'];
+        $amenities = $_POST['amenities'];
+        foreach($amenities as $chkl1){$chkl1 .= $chkl1.",";}
+        
+        $facing= $_POST['facing'];
+        $power_backup = $_POST['radio1'];
+        $age_of_construction = $_POST['age_of_construction'];
+        $image = $_FILES['image']['name'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+
+        $path = "../dist/img/".$image;
+        move_uploaded_file($tmp_name,$path);
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image')";
+        if (mysqli_query($conn,$query)){
+          echo "<script> alert ('New record has been added successfully !');</script>";
+       } else {
+          echo "<script> alert ('connection failed !');</script>";
+       }
+    }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +43,10 @@
   <title>AdminLTE 3 | Advanced form elements</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- daterange picker -->
@@ -34,7 +73,10 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-    
+    <?php
+include("../_includes/header.php");
+include("../_includes/sidebar.php");
+ ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -54,6 +96,19 @@
         </div><!-- /.container-fluid -->
       </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
@@ -65,24 +120,20 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <form method="post">
+              <form method="post" enctype="multipart/form-data">
+
+
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Name</label>
-                      <input type="text" class="form-control" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                      <label>Area</label>
-                      <input type="text" class="form-control" placeholder="Enter Area">
+                      <label>Property ID</label>
+                      <input type="text" class="form-control">
                     </div>
                   </div>
-                  <!-- /.col -->
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Property</label>
-                      <select class="select2" multiple="multiple" data-placeholder="Select a State"
-                        style="width: 100%;">
+                      <select class="select2" data-placeholder="Select a State" name="property" style="width: 100%;">
                         <option value="select" disabled>select</option>
                         <option value="project">New Project</option>
                         <option value="resale">Resale</option>
@@ -90,84 +141,220 @@
 
                       </select>
                     </div>
-                    <!-- /.form-group -->
+                  </div>
+                </div>
 
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Building Name</label>
+                      <input type="text" name="building_name" class="form-control" placeholder="Enter building name">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Carpet Area(sq-ft)</label>
+                      <input type="text" name="carpet_area" class="form-control" placeholder="Enter Area">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Location</label>
+                      <input type="text" name="location" class="form-control" placeholder="Enter location">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Built-up Area(sq-ft)</label>
+                      <input type="text" name="builtup_area" class="form-control" placeholder="Enter contact number">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Age of Construction</label>
+                      <select class="select2" name="age_of_construction" data-placeholder="Age of Construction"
+                        style="width: 100%;">
+                        <option value="select" disabled>select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Facing</label>
+                      <input type="text" name="facing" class="form-control" placeholder="Enter Facing">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Price</label>
-                      <input type="tel" class="form-control" placeholder="Enter contact number">
+                      <input type="text" name="price" class="form-control" placeholder="Enter location">
                     </div>
-                    <!-- /.form-group -->
                   </div>
-                  <!-- /.col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input type="file" name="image" class="form-control" placeholder="Enter contact number">
+                    </div>
+                  </div>
                 </div>
-                <!-- /.row -->
 
 
                 <div class="row">
-                  <div class="col-12 col-sm-6">
+                  <div class="col-md-6">
+                    <label>Power Backup</label>
                     <div class="form-group">
-                      <label>Location</label>
-                      <input type="text" class="form-control" placeholder="Enter location">
+                      <div class="form-check">
+                        <input class="form-check-input" value="Yes" name="radio1" type="radio">
+                        <label class="form-check-label">YES</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" value="No" name="radio1" type="radio">
+                        <label class="form-check-label">NO</label>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label>Description</label>
-                      <input type="text" class="form-control" placeholder="Enter description">
-                    </div>
-
-                    <div class="form-group">
-                      <label>Image</label>
-                      <input type="file" class="form-control">
-                    </div>
-                    <!-- /.form-group -->
                   </div>
-                  <!-- /.col -->
-                  <div class="col-12 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label>Contact No.</label>
-                      <input type="tel" class="form-control" placeholder="Enter contact number">
+                      <label>Furnishing</label>
+                      <div class="form-check">
+                        <input class="form-check-input" value="Yes" name="radio" type="radio">
+                        <label class="form-check-label">YES</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" value="No" name="radio" type="radio">
+                        <label class="form-check-label">NO</label>
+                      </div>
                     </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Water Source</label>
+                      <input type="text" name="water_source" class="form-control">
+                    </div>
+                  </div>
+
+
+
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Amenities</label>
-                      <input type="text" class="form-control" placeholder="Enter amenities">
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" value="Children Play Area" name="amenities[ ]" type="checkbox">
+                                <label class="form-check-label">Children Play Area</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" value="Gym" name="amenities[ ]" type="checkbox">
+                                <label class="form-check-label">Gym</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" name="amenities[ ]" value="High Tech Lift" type="checkbox">
+                                <label class="form-check-label">High Tech Lift</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-7">
+
+                            <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" value="Wifi-Connectivity"  name=amenities[] type="checkbox">
+                                <label class="form-check-label">Wifi-Connectivity</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" value="Swimming Pool" name=amenities[] type="checkbox">
+                                <label class="form-check-label">Swimming Pool</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" value="Terrace garden" name=amenities[] type="checkbox">
+                                <label class="form-check-label">Terrace garden</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+
+
+
+
                   </div>
 
-                  <!-- /.form-group -->
-                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Description</label>
+                      <textarea id="summernote" name="description"></textarea>
+                    </div>
+                  </div>
                 </div>
-                <!-- /.col -->
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
-            <!-- /.row -->
-            </form>
           </div>
-          <!-- /.card-body -->
-
         </div>
-        <!-- /.card -->
-
-        <!-- SELECT2 EXAMPLE -->
-
-
+      </section>
 
 
     </div>
-    <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.2.0
+      </div>
+      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -199,6 +386,7 @@
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
   <!-- Page specific script -->
+  <script src="../plugins/summernote/summernote-bs4.min.js"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -342,6 +530,18 @@
       myDropzone.removeAllFiles(true)
     }
     // DropzoneJS Demo Code End
+  </script>
+  <script>
+    $(function () {
+      // Summernote
+      $('#summernote').summernote()
+
+      // CodeMirror
+      CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
+      });
+    })
   </script>
 </body>
 
