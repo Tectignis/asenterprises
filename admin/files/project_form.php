@@ -14,19 +14,35 @@ if(!isset($_SESSION['id'])){
         $location = $_POST['location'];
         $description = $_POST['description'];
         $water_source= $_POST['water_source'];
-        $furnishing = $_POST['radio'];
+        $furnishing = $_POST['radio2'];
         $amenities = $_POST['amenities'];
         foreach($amenities as $chkl1){$chkl1 .= $chkl1.",";}
-        
         $facing= $_POST['facing'];
         $power_backup = $_POST['radio1'];
         $age_of_construction = $_POST['age_of_construction'];
-        $image = $_FILES['image']['name'];
-        $tmp_name = $_FILES['image']['tmp_name'];
 
-        $path = "../dist/img/".$image;
+        $image1 = $_FILES['image1']['name'];
+        $tmp_name = $_FILES['image1']['tmp_name'];
+        $path = "../dist/img/".$image1;
         move_uploaded_file($tmp_name,$path);
-        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image')";
+
+        $image2 = $_FILES['image2']['name'];
+        $tmp_name = $_FILES['image2']['tmp_name'];
+        $path = "../dist/img/".$image2;
+        move_uploaded_file($tmp_name,$path);
+
+        $image3= $_FILES['image3']['name'];
+        $tmp_name = $_FILES['image3']['tmp_name'];
+        $path = "../dist/img/".$image3;
+        move_uploaded_file($tmp_name,$path);
+
+        $image4 = $_FILES['image4']['name'];
+        $tmp_name = $_FILES['image4']['tmp_name'];
+        $path = "../dist/img/".$image4;
+        move_uploaded_file($tmp_name,$path);
+
+
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4')";
         if (mysqli_query($conn,$query)){
           echo "<script> alert ('New record has been added successfully !');</script>";
        } else {
@@ -122,17 +138,10 @@ include("../_includes/sidebar.php");
             <div class="card-body">
               <form method="post" enctype="multipart/form-data">
 
-
-                <div class="row">
+              <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Property ID</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Property</label>
+                    <label>Property</label>
                       <select class="select2" data-placeholder="Select a State" name="property" style="width: 100%;">
                         <option value="select" disabled>select</option>
                         <option value="project">New Project</option>
@@ -142,40 +151,37 @@ include("../_includes/sidebar.php");
                       </select>
                     </div>
                   </div>
-                </div>
-
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Building Name</label>
-                      <input type="text" name="building_name" class="form-control" placeholder="Enter building name">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Carpet Area(sq-ft)</label>
-                      <input type="text" name="carpet_area" class="form-control" placeholder="Enter Area">
+                      <input type="text" name="building_name" class="form-control" placeholder="Enter Building Name ">
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Carpet Area </label>
+                      <input type="text" name="carpet_area" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Built-up Area </label>
+                      <input type="text" name="builtup_area" class="form-control">
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Location</label>
-                      <input type="text" name="location" class="form-control" placeholder="Enter location">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Built-up Area(sq-ft)</label>
-                      <input type="text" name="builtup_area" class="form-control" placeholder="Enter contact number">
+                      <input type="text" name="location" class="form-control">
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label>Age of Construction</label>
                       <select class="select2" name="age_of_construction" data-placeholder="Age of Construction"
@@ -215,129 +221,160 @@ include("../_includes/sidebar.php");
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label>Facing</label>
-                      <input type="text" name="facing" class="form-control" placeholder="Enter Facing">
+                      <input type="text" name="facing" class="form-control">
                     </div>
                   </div>
-                </div>
-
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Price</label>
-                      <input type="text" name="price" class="form-control" placeholder="Enter location">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Image</label>
-                      <input type="file" name="image" class="form-control" placeholder="Enter contact number">
+                      <input type="text" name="price" class="form-control">
                     </div>
                   </div>
                 </div>
 
-
                 <div class="row">
-                  <div class="col-md-6">
-                    <label>Power Backup</label>
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <div class="form-check">
-                        <input class="form-check-input" value="Yes" name="radio1" type="radio">
-                        <label class="form-check-label">YES</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" value="No" name="radio1" type="radio">
-                        <label class="form-check-label">NO</label>
+                      <label>Power Backup</label>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" value="Yes" name="radio1" type="radio">
+                          <label class="form-check-label">YES</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="No" name="radio1" type="radio">
+                          <label class="form-check-label">NO</label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label>Furnishing</label>
-                      <div class="form-check">
-                        <input class="form-check-input" value="Yes" name="radio" type="radio">
-                        <label class="form-check-label">YES</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" value="No" name="radio" type="radio">
-                        <label class="form-check-label">NO</label>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" value="Yes" name="radio2" type="radio">
+                          <label class="form-check-label">YES</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="No" name="radio2" type="radio">
+                          <label class="form-check-label">NO</label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Water Source</label>
                       <input type="text" name="water_source" class="form-control">
                     </div>
                   </div>
+                </div>
 
 
-
-                  <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <label>Amenities</label>
+                      <label>Aminities </label>
                       <div class="form-group">
-                        <div class="row">
-                          <div class="col-sm-4">
-                            <div class="form-group">
-                              <div class="form-check">
-                                <input class="form-check-input" value="Children Play Area" name="amenities[ ]" type="checkbox">
-                                <label class="form-check-label">Children Play Area</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" value="Gym" name="amenities[ ]" type="checkbox">
-                                <label class="form-check-label">Gym</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" name="amenities[ ]" value="High Tech Lift" type="checkbox">
-                                <label class="form-check-label">High Tech Lift</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-7">
-
-                            <div class="form-group">
-                              <div class="form-check">
-                                <input class="form-check-input" value="Wifi-Connectivity"  name=amenities[] type="checkbox">
-                                <label class="form-check-label">Wifi-Connectivity</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" value="Swimming Pool" name=amenities[] type="checkbox">
-                                <label class="form-check-label">Swimming Pool</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" value="Terrace garden" name=amenities[] type="checkbox">
-                                <label class="form-check-label">Terrace garden</label>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Lift" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Lift</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Gymnasium" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Gymnasium</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Security" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Security</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Kids Play Area" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Kids Play Area</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Swimming Pool" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Swimming Pool</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Terrace garden" name=amenities[] type="checkbox">
+                          <label class="form-check-label">Terrace garden</label>
                         </div>
                       </div>
                     </div>
-
-
-
-
                   </div>
-
-                  <div class="col-md-12">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <label>Description</label>
-                      <textarea id="summernote" name="description"></textarea>
+                      <label> </label>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" value="Club House" name="amenities[ ]"
+                            type="checkbox">
+                          <label class="form-check-label">Club House</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" value="Cycling & Jogging Track" name="amenities[ ]" type="checkbox">
+                          <label class="form-check-label">Cycling & Jogging Track</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" name="amenities[ ]" value="Reserved Parking" type="checkbox">
+                          <label class="form-check-label">Reserved Parking</label>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" value="Kids Splash Pool" name=amenities[] type="checkbox">
+                        <label class="form-check-label">Kids Splash Pool</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" value="Volleyball court" name=amenities[] type="checkbox">
+                        <label class="form-check-label">Volleyball court</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" value="Intercom Facility" name=amenities[] type="checkbox">
+                        <label class="form-check-label">Intercom Facility</label>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input type="file" name="image1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input type="file" name="image2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input type="file" name="image3" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input type="file" name="image4" class="form-control">
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                <div class="col-md-12 ">
+                <label>Description</label>
+                   <div class="form-group">
+              <textarea id="summernote" name="description">
+              
+              </textarea>
+            </div>
+                    </div>
+  </div>
+                  <div class="card-footer">
+                <button type="submit" name="submit" class="btn btn-primary" style="float: right;">Submit</button>
+  </div>
               </form>
+                </div>
             </div>
           </div>
-        </div>
       </section>
 
 
