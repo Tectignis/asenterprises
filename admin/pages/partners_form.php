@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+<?php
+include("../_includes/config.php");
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:index.php");
+} 
+    if(isset($_POST['submit']))
+    {
+        $name = $_POST['name'];
+        $image = $_FILES['image']['name'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $path = "../dist/img/".$image;
+        move_uploaded_file($tmp_name,$path);
+        $query = "INSERT INTO `partners`(`name`, `image`) VALUES ('$name','$image')";
+        if (mysqli_query($conn, $query)){
+          echo "<script> alert ('New record has been added successfully !');</script>";
+       } else {
+          echo "<script> alert ('connection failed !');</script>";
+       }
+    }
+  ?>
+
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,7 +57,10 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-
+    <?php
+include("../_includes/header.php");
+include("../_includes/sidebar.php");
+ ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -63,16 +88,15 @@
           <div class="card card-default">
             <div class="card-header">
               <h3 class="card-title">Partners Form</h3>
-
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <form method="post">
+              <form method="post" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" class="form-control" placeholder="Enter Name">
+                      <input type="text" class="form-control" name="name" placeholder="Enter Name">
                     </div>
 
                   </div>
@@ -81,7 +105,7 @@
 
                     <div class="form-group">
                       <label>Image</label>
-                      <input type="file" class="form-control">
+                      <input type="file" name="image" class="form-control">
                     </div>
                     <!-- /.form-group -->
 
@@ -104,32 +128,19 @@
         </div>
         <!-- /.card-body -->
 
-    </div>
-    <!-- /.card -->
-
-    <!-- SELECT2 EXAMPLE -->
-
-
-
-
-  </div>
   <!-- /.container-fluid -->
   </section>
+
+  
   <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+  <?php
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+include("../_includes/footer.php");
+ ?>
+
+
   </div>
   <!-- ./wrapper -->
 
