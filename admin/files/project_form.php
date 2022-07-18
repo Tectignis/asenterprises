@@ -158,17 +158,16 @@ include("../_includes/sidebar.php");
                     </div>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>Carpet Area </label>
+                      <label>Carpet Area (sq.ft)</label>
                       <input type="text" name="carpet_area" class="form-control">
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>Built-up Area </label>
+                      <label>Built-up Area (sq.ft)</label>
                       <input type="text" name="builtup_area" class="form-control">
                     </div>
                   </div>

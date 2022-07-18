@@ -3,7 +3,17 @@ include("../_includes/config.php");
 // session_start();
 // if(!isset($_SESSION['id'])){
 //     header("location:index.php");
-// } ?>
+// } 
+
+if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from partners where id='$id'");
+  if($sql=1){
+      header("location:partners.php");
+  }
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,14 +103,13 @@ include("../_includes/sidebar.php");
                         </td>
                         <td>
                        
-                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                         style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                                                
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
+                        <a href="partners.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
-                                     
-                                   
+                        <!-- <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a> -->
+
                                                          
                                                </td> 
                        
