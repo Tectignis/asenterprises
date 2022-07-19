@@ -50,9 +50,9 @@ include("include/config.php");
     padding: 5px 15px;
   }
   .price-box{
-    position: absolute;
-    top: 300px;
-    left: 170px;
+    position: fixed;
+    top: 324px;
+    right: 22px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -61,6 +61,23 @@ include("include/config.php");
     border-radius: 5px;
     padding: 5px 15px;
   }
+
+    .project_head{
+    color:#106eea !important;
+    
+  }
+  .project_head:before{
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #106eea;
+    width: 100% !important;
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: underline;
+}
   </style>
 </head>
 
@@ -78,223 +95,142 @@ include("include/config.php");
   
 
  
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+  <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
+      <div class="row" style="background:white; border-radius:10px; ">
+          <form method="GET">
+                        <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
+                    		<div class="row" style="height:60px;">
+                        <div class="col-lg-1 col-md-1 col-sm-1" >
+                        
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top:3px; margin-top:9px;">
+                     
+                        <label>Sort by:</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <?php 
+                        
+                        
+                        ?>
+                           <input type="checkbox" class="bhk" id="1rk" value="1">&nbsp;<label for="1rk">1 RK</label>
+						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						   <input type="checkbox" class="bhk" id="bhk1" value="2">&nbsp;<label for="bhk1">1 BHK</label>
+						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						   <input type="checkbox" class="bhk" id="bhk2" value="3">&nbsp;<label for="bhk2">2 BHK</label>
+						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+						   <input type="checkbox" class="bhk" id="bhk3" value="4">&nbsp;<label for="bhk3">3 BHK</label>
+						   
+                           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" class="bhk" id="bhk4" value="4">&nbsp;<label for="bhk4">4 BHK</label>
+						   
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						   <input type="button" class="btn btn-primary" value="Sort" onclick="sort_listing();">
+						   
+                        </div>
+                            
+                            </div>
+                			</div>
 
+                        </form>
+</div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> UPCOMING  <span> PROJECTS</span></h3>
+         
+          <h3> UPCOMING  <span>PROJECTS </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
-
+        <?php 
+                     
+                     $sql=mysqli_query($conn,"select * from `property`");
+                 
+                      while($arr=mysqli_fetch_array($sql)){
+                     ?>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          
             <div class="member">
+           
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
+          
+                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                 <div class="tag">
-              <span>Ready</span>
-              </div>
+               <span><?php echo $arr['property'];?></span>
+                      </div>
                 <div class="price-box">
-              <span>600000</span>
+              <span>₹<?php echo $arr['price'];?></span>
               </div>
               </div>
               <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Shatkars Apartment</a></h4>
-                <span>Nerul</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
+                <div class="col-8">
+                <h4><a href="info.php?id=<?php echo $arr['id'];?>"><?php echo $arr['building_name'];?></a></h4>
+                <span><?php echo $arr['location'];?></span>
                 </div>
-</div>
+                
+                <div class="col-4">
+                <h6><?php echo $arr['flat'];?></h6>
+                <span><?php echo $arr['carpet_area'];?>sq.ft <span>
+                </div>
+               
+            </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Prabodhan</a></h4>
-                <span>Panvel</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">KrushnKunj</a></h4>
-                <span>Kamothe</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="" >
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Aashiyana</a></h4>
-                <span>New Mumbai</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
+          <?php } ?>
         </div>
+          
 
       </div>
     </section><!-- End Team Section -->
-
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> ONGOING <span> PROJECTS</span></h3>
+          <h3> ONGOING  <span>PROJECTS </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
-
+        <?php 
+                     
+                     $sql=mysqli_query($conn,"select * from `property`");
+                 
+                      while($arr=mysqli_fetch_array($sql)){
+                     ?>
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          
             <div class="member">
+           
               <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
+          
+                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                 <div class="tag">
-              <span>Ready</span>
-              </div>
+               <span><?php echo $arr['property'];?></span>
+                      </div>
                 <div class="price-box">
-              <span>600000</span>
+              <span>₹<?php echo $arr['price'];?></span>
               </div>
               </div>
               <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Sai Vrindavan</a></h4>
-                <span>Karanjade</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
+                <div class="col-8">
+                <h4><a href="info.php?id=<?php echo $arr['id'];?>"><?php echo $arr['building_name'];?></a></h4>
+                <span><?php echo $arr['location'];?></span>
                 </div>
-</div>
+                
+                <div class="col-4">
+                <h6><?php echo $arr['flat'];?></h6>
+                <span><?php echo $arr['carpet_area'];?>sq.ft <span>
+                </div>
+
+               
+            </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Balaji Shraddha</a></h4>
-                <span>Kalamboli</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Vrundavan apartment</a></h4>
-                <span>Panvel</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
-                <div class="tag">
-              <span>Ready</span>
-              </div>
-                <div class="price-box">
-              <span>600000</span>
-              </div>
-              </div>
-              <div class="member-info d-flex">
-              <div class="col-8">
-                <h4><a href="info.php">Pavan Dhara</a></h4>
-                <span>Kamothe</span>
-              </div>
-              <div class="col-4">
-                <h6>400sq.ft</h6>
-                </div>
-</div>
-            </div>
-          </div>
-
+          <?php } ?>
         </div>
+          
 
       </div>
-    </section><!-- End #main -->
-
+    </section><!-- End Team Section -->
 <?php include("include/footer.php"); ?>
 
   <div id="preloader"></div>

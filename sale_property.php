@@ -8,7 +8,7 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resale Property</title>
+  <title>Sale Property</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -52,7 +52,7 @@ include("include/config.php");
   .price-box{
     position: fixed;
     top: 324px;
-    right: 22px;
+    left: 222px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -61,23 +61,6 @@ include("include/config.php");
     border-radius: 5px;
     padding: 5px 15px;
   }
-
-  .r_property{
-    color:#106eea !important;
-
-  }
-  .r_property:before{
-  content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #106eea;
-    width: 100% !important;
-    transition: all 0.3s ease-in-out 0s;
-    text-decoration: underline;
-}
   </style>
 </head>
 
@@ -130,14 +113,14 @@ include("include/config.php");
 </div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> RESALE  <span>PROPERTIES </span></h3>
+          <h3> SALE  <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
         <?php 
                      
-                     $sql=mysqli_query($conn,"select * from `property` where property='resale'");
+                     $sql=mysqli_query($conn,"select * from `property` where property='project'");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
@@ -160,12 +143,11 @@ include("include/config.php");
                 <h4><a href="info.php?id=<?php echo $arr['id'];?>"><?php echo $arr['building_name'];?></a></h4>
                 <span><?php echo $arr['location'];?></span>
                 </div>
-                
+               
                 <div class="col-4">
                 <h6><?php echo $arr['flat'];?></h6>
                 <span><?php echo $arr['carpet_area'];?>sq.ft <span>
                 </div>
-
                
             </div>
             </div>
