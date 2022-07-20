@@ -47,8 +47,8 @@ require 'PHPMailer/src/Exception.php';
         //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
 				//Recipients
-				$mail->setFrom('divyani.keshari@tectignis.in', 'Tectignis It Solution');
-				$mail->addAddress($email, 'Tectignis Employee');     //Add a recipient
+				$mail->setFrom('divyani.keshari@tectignis.in','Support ASENTERPRISES');
+				$mail->addAddress($email);     //Add a recipient
 				
 				//Content
 				$mail->isHTML(true);                                  //Set email format to HTML
