@@ -11,7 +11,7 @@
   </ul>
 
   <div class="text-md-right mr-5 d-flex float-right" style="width:100%;justify-content:right"> <a class="btn btn-smb btn-outline-primary rounded-pill" href="logout.php">
-  <i class="fa fa-sign-out" aria-hidden="true"></i>
+  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
 
             Logout </a> </div>
 </nav>  
