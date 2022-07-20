@@ -5,7 +5,14 @@ include("../_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
     header("location:index.php");
- } ?>
+ } 
+ if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from property where id='$id'");
+  if($sql=1){
+      header("location:rent.php");
+  }
+  }?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,14 +72,14 @@ include("../_includes/sidebar.php");
             <div class="col-12">
 
               <!-- /.card -->
-              <div class="card-tools my-3" style="text-align:end;">
+            
+              <div class="card">
+              <div class="card-header">
+                  <h3 class="card-title" style="padding-top:25px;">List of Rent</h3>
+                       <div class="card-tools my-3" style="text-align:end;">
                 <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
                   data-original-title="Click here to Add project">Add Project</a>
-
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">List of Rent</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -115,12 +122,12 @@ include("../_includes/sidebar.php");
                         </td>  
                         <td>
                        
-                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                         style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                                                
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
+                        <a href="rent.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+                        <button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button>
                                      
                                    
                                                          

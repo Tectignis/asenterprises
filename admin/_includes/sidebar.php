@@ -78,8 +78,7 @@
               Partners
             </p>
           </a>
-        </li>
-     
+        </li>   
       <li class="nav-item">
         <a href="testimonials.php" class="nav-link">
             <p>
@@ -87,6 +86,19 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+          <a href="forgotpassword.php" class="nav-link">
+          <p>Forgot Password</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="changepassword.php" class="nav-link">
+            <!-- <i class=" nav-icon far fa-solid fa-handshake"></i> -->
+            <p>
+              Change password
+            </p>
+          </a>
+        </li>
        </ul>
     </nav>
     <!-- /.sidebar-menu -->
