@@ -29,6 +29,8 @@ include("include/config.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="ribbon.css">
+  <!-- <script src="toruskit.js"></script> -->
 
   <!-- =======================================================
   * Template Name: BizLand - v3.7.0
@@ -37,6 +39,7 @@ include("include/config.php");
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 <style>
+ 
   .tag{
     position: absolute;
     top: 10px;
@@ -60,6 +63,11 @@ include("include/config.php");
     color: #fff;
     border-radius: 5px;
     padding: 5px 15px;
+  }
+  .saleTag{
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
   </style>
 
@@ -139,16 +147,19 @@ include("include/config.php");
           <!-- <p>...</p> -->
         </div>
 
+
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch " data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
+
+              <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
               
                 <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
-                <div class="tag">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -167,14 +178,17 @@ include("include/config.php");
           </div>
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
+
+            <div class="member ">
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
              
                 <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
-                <div class="tag">
+
+                <!-- <div class="">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -193,11 +207,13 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+             
                 <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
-                <div class="tag">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -216,11 +232,13 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+             
                 <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
-                <div class="tag">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -260,11 +278,13 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+             
                 <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
-                <div class="tag">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -283,11 +303,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img6.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -306,11 +327,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img2.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -329,11 +351,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="" >
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img3.jpg" class="img-fluid" alt="" >
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -370,11 +393,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -393,11 +417,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img5.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -416,11 +441,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img3.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
@@ -439,11 +465,12 @@ include("include/config.php");
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
-              <div class="member-img" style="height:340px; width:420px;">
-                <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
-                <div class="tag">
+            <div class="member-img p-0 m-0" style="height:340px; width:420px;">
+          <div class="ribbon-corner ribbon-fold " style="z-index:99999" data-tor="place.left place.top"></div>
+                             <img src="assets/img/team/img1.jpg" class="img-fluid" alt="">
+                <!-- <div class="tag">
               <span>Ready</span>
-              </div>
+              </div> -->
                 <div class="price-box">
               <span>600000</span>
               </div>
