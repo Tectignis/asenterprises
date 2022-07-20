@@ -69,6 +69,7 @@
        
         <li class="nav-item">
           <a href="contactus.php" class="nav-link">
+          <i class="nav-icon fas fa-solid fa-id-badge"></i>
           <p>Contact us </p>
           </a>
         </li>
@@ -82,6 +83,7 @@
         </li>   
       <li class="nav-item">
         <a href="testimonials.php" class="nav-link">
+        <i class="fa-solid fa-people-pants-simple"></i>
             <p>
             Testimonials
           </p>
