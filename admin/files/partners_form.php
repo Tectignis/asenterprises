@@ -26,7 +26,7 @@ include("../_includes/config.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Advanced form elements</title>
+  <title>AS | PARTNERS FORM </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"

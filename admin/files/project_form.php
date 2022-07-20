@@ -56,7 +56,7 @@ if(!isset($_SESSION['id'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Advanced form elements</title>
+  <title>AS | PROJECT FORM </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -238,11 +238,11 @@ include("../_includes/sidebar.php");
                       
                       <select class="select2" data-placeholder="Select a flat" name="flat" style="width: 100%;">
                         <option value="select" disabled>select</option>
-                        <option value="1rk">1rk</option>
-                        <option value="1bhk">1bhk</option>
-                        <option value="2bhk">2bhk</option>
-                        <option value="3bhk">3bhk</option>
-                        <option value="4bhk">4bhk</option>
+                        <option value="1RK">1RK</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="4BHK">4BHK</option>
 
                       </select>
                     </div>
