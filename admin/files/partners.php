@@ -13,6 +13,25 @@ if(isset($_GET['delid'])){
   }
   }
 
+  if(isset($_POST['partneredit1'])){
+    $id=$_POST['propertyid'];
+    $name = $_POST['name'];
+    $image=$_FILES['image']['name'];
+  $dnk=$_FILES['image']['tmp_name'];
+    $loc="../dist/img/".$image;
+    move_uploaded_file($dnk,$loc);
+   
+   
+    $sql="UPDATE `partners` SET `name`='$name',`image`='$image' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)){
+      // header("location:new_project.php");
+      echo "<script>alert('Successfully Updated');</script>";
+   } else {
+      echo "<script> alert ('connection failed !');window.location.href='partners.php'</script>";
+   }
+  }
+  
+
 ?>
 
 <!DOCTYPE html>
@@ -99,11 +118,11 @@ include("../_includes/sidebar.php");
                           <?php echo $arr['name'];?>
                         </td>
                         <td>
-                          <?php echo $arr['image'];?>
+                        <img src="../dist/img/<?php echo $arr['image'];?>" style="height:20px; width:20px;"> 
                         </td>
                         <td>
                        
-                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon partneredit btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                         style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                                                
                         <a href="partners.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
@@ -123,6 +142,27 @@ include("../_includes/sidebar.php");
                     </tbody>
                   </table>
                 </div>
+
+                <div class="modal fade closemaual" id="dnkModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+      <div class="modal-body body4">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" name="partneredit1">Save changes</button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
@@ -185,6 +225,27 @@ include("../_includes/footer.php");
       });
     });
   </script>
+
+
+          <script>
+          $(document).ready(function(){
+          $('.partneredit').click(function(){
+            let dnk2 = $(this).data('id');
+
+            $.ajax({
+            url: 'check.php',
+            type: 'post',
+            data: {dnk2: dnk2},
+            success: function(response4){ 
+              $('.body4').html(response4);
+              $('#dnkModal3').modal('show'); 
+            }
+          });
+          });
+
+
+          });
+          </script>
 </body>
 
 </html>

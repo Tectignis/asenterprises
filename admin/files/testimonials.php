@@ -5,7 +5,34 @@ include("../_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
     header("location:index.php");
- } ?>
+ } 
+ if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from testimonials where id='$id'");
+  if($sql=1){
+      header("location:testimonials.php");
+  }
+  }
+
+  if(isset($_POST['testedit1'])){
+    $id=$_POST['propertyid'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $image=$_FILES['image']['name'];
+  $dnk=$_FILES['image']['tmp_name'];
+    $loc="../dist/img/".$image;
+    move_uploaded_file($dnk,$loc);
+   
+   
+    $sql="UPDATE `testimonials` SET `name`='$name',`image`='$image',`description`='$description' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)){
+      // header("location:new_project.php");
+      echo "<script>alert('Successfully Updated');</script>";
+   } else {
+      echo "<script> alert ('connection failed !');window.location.href='testimonials.php'</script>";
+   }
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,15 +88,16 @@ include("../_includes/sidebar.php");
           <div class="row">
             <div class="col-12">
 
-              <!-- /.card -->
-              <div class="card-tools my-3" style="text-align:end;">
-                <a class="btn btn-primary" href="testimonials_form.php" data-tt="tooltip" title=""
-                  data-original-title="Click here to Add Testimonials">Add Testimonials</a>
-
-              </div>
+        
               <div class="card">
+              
                 <div class="card-header">
-                  <h3 class="card-title">List of Testimonials</h3>
+                  <h3 class="card-title" style="padding-top:25px;">List of Testimonials</h3>
+                       <div class="card-tools my-3" style="text-align:end;">
+                <a class="btn btn-primary" href="testimonials_form.php" data-tt="tooltip" title=""
+                  data-original-title="Click here to Add project">Add Testimonials</a>
+             
+                </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -79,7 +107,7 @@ include("../_includes/sidebar.php");
                         <th>Name</th>
                         <th>Image</th>
                         <th>Description</th>
-
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -92,11 +120,22 @@ include("../_includes/sidebar.php");
                           <?php echo $arr['name'];?>
                         </td>
                         <td>
-                          <?php echo $arr['image'];?>
+                         <img src="../dist/img/<?php echo $arr['image'];?>" style="height:20px; width:20px;"> 
                         </td>
                         <td>
                           <?php echo $arr['description'];?>
                         </td>
+                        <td>
+<button  type="button" class="btn btn-sm btn-primary btn-rounded btn-icon testedit btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+ style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
+                                        
+ <a href="testimonials.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
+
+
+              
+            
+                                  
+                        </td>  
                        
                        
     </tr>     
@@ -109,6 +148,28 @@ include("../_includes/sidebar.php");
 
                   </table>
                 </div>
+
+                <div class="modal fade closemaual" id="dnkModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+      <div class="modal-body body5">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" name="testedit1">Save changes</button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>
+         
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
@@ -169,6 +230,25 @@ include("../_includes/footer.php");
       });
     });
   </script>
+  <script>
+          $(document).ready(function(){
+          $('.testedit').click(function(){
+            let dnk3 = $(this).data('id');
+
+            $.ajax({
+            url: 'check.php',
+            type: 'post',
+            data: {dnk3: dnk3},
+            success: function(response5){ 
+              $('.body5').html(response5);
+              $('#dnkModal4').modal('show'); 
+            }
+          });
+          });
+
+
+          });
+          </script>
 </body>
 
 </html>

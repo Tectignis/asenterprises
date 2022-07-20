@@ -1,84 +1,416 @@
 <?php
+include("../_includes/config.php");
+ session_start();
+ if(!isset($_SESSION['id'])){
+     header("location:index.php");
+ }?>
+<?php
 if(isset($_POST['dnk'])){
   $query=mysqli_query($conn,"select * from property where id='".$_POST['dnk']."'");
   $row=mysqli_fetch_array($query);
-  echo '  <div class="row">
+  echo ' 
+  <div class="row">
   <div class="col-md-12">
-                <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="first_name">            
-            Employee <span class="text-danger">*</span>
-          </label>
-          <input type="hidden" name="manualid" value="'.$row['id'].'">
-          <input type="hidden" name="manualemplid" value="'.$row['employee_id'].'">';
-          
-        echo'  <select class="form-control select2-hidden-accessible" name="employee_name1" data-plugin="select_hrm" data-placeholder="Employee" tabindex="-1" aria-hidden="true" data-select2-id="44">';
-        echo'  <option value="'.$row['employee_name'].'" selected>'.$row['employee_name'].'</option>';
-          $query=mysqli_query($conn,"select * from employee");
-                  while($sql=mysqli_fetch_array($query))
-                  { echo "<option value='".$sql['fname']." ".$sql['lname']."'>".$sql['fname']." ".$sql['lname']."</option>";
-                       } 
-                       echo' </select>
-        </div>
+    <div class="form-group">
+      <label for="date">
+      Building Name  <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+      <input type="hidden" name="propertyid" value="'.$row['id'].'">
+         
+        <input class="form-control" placeholder="building_name" name="building_name" type="text" value="'.$row['building_name'].'" data-dtp="dtp_dl6pL">
+        
       </div>
     </div>
-          <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="date">
-            Attendance Date <span class="text-danger">*</span>
-          </label>
-          <div class="input-group">
-            <input class="form-control attendance_date_e" placeholder="Attendance Date" name="attendance_date_m" type="text" value="'.$row['date'].'" data-dtp="dtp_dl6pL">
-            <div class="input-group-append"><span class="input-group-text"><i class="fas fa-calendar-alt"></i></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
+
     <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
         <div class="form-group">
           <label for="clock_in">
-            In Time <span class="text-danger">*</span>
+          flat   <span class="text-danger">*</span>
           </label>
           <div class="input-group">
-            <input class="form-control timepicker" placeholder="In Time" readonly="true" name="clock_in_m" type="text" value="'.$row['clock_in'].'" data-dtp="dtp_qHHzf">
-            <div class="input-group-append"><span class="input-group-text"><i class="fas fa-clock"></i></span></div>
+            <input class="form-control" placeholder="flat" name="flat" type="text" value="'.$row['flat'].'"  data-dtp="dtp_qHHzf">
+            
           </div>
         </div>
       </div>
-              <div class="col-md-6">
-        <div class="form-group">
-          <label for="clock_out">
-            Out Time <span class="text-danger">*</span>
-          </label>
-          <div class="input-group">
-            <input class="form-control timepicker" placeholder="Out Time" readonly="true" name="clock_out_m" type="text" value="'.$row['clock_out'].'" data-dtp="dtp_XXfJ3">
-            <div class="input-group-append"><span class="input-group-text"><i class="fas fa-clock"></i></span></div>
-          </div>
-        </div>
+              
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Location <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+        <input class="form-control" placeholder="Location" name="location" type="text" value="'.$row['location'].'" data-dtp="dtp_dl6pL">
+        
       </div>
     </div>
+  </div>
+  </div>
+
+
+  <div class="row">
+  <div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+Build-up Area   <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="built-up area" name="builtup_area" type="text" value="'.$row['builtup_area'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+  
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+  <label for="date">
+  carpet Area <span class="text-danger">*</span>
+  </label>
+  <div class="input-group">
+    <input class="form-control" placeholder="carpet_area" name="carpet_area" type="text" value="'.$row['carpet_area'].'" data-dtp="dtp_dl6pL">
+    
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+property  <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="property" name="property" type="text" value="'.$row['property'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
   </div>
 </div>
 ';
 }
 
-if(isset($_POST['projectid'])){
-  $id=$_POST['manualid'];
-  $emp_id=$_POST['manualemplid'];
-  $employee = $_POST['employee_name1'];
-  $attendance_date = $_POST['attendance_date_m'];
-  $in_time = $_POST['clock_in_m'];
-  $out_time = $_POST['clock_out_m'];
- 
-  $sql="UPDATE `attendance` SET `date`='$attendance_date',`clock_in`='$in_time',`clock_out`='$out_time',`employee_id`='$emp_id',`employee_name`='$employee' WHERE id='$id
-  .'";
-  if (mysqli_query($conn, $sql)){
-    header("location:new_project.php");
- } else {
-    echo "<script> alert ('connection failed !');window.location.href='new_project.php'</script>";
- }
+
+?>
+
+
+<?php
+if(isset($_POST['dnkk'])){
+  $query=mysqli_query($conn,"select * from property where id='".$_POST['dnkk']."'");
+  $row=mysqli_fetch_array($query);
+  echo ' 
+  <div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Building Name  <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+      <input type="hidden" name="propertyid" value="'.$row['id'].'">
+         
+        <input class="form-control" placeholder="building_name" name="building_name" type="text" value="'.$row['building_name'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+              <div class="col-md-12">
+        <div class="form-group">
+          <label for="clock_in">
+          flat   <span class="text-danger">*</span>
+          </label>
+          <div class="input-group">
+            <input class="form-control" placeholder="flat" name="flat" type="text" value="'.$row['flat'].'"  data-dtp="dtp_qHHzf">
+            
+          </div>
+        </div>
+      </div>
+              
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Location <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+        <input class="form-control" placeholder="Location" name="location" type="text" value="'.$row['location'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="row">
+  <div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+Build-up Area   <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="built-up area" name="builtup_area" type="text" value="'.$row['builtup_area'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+  
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+  <label for="date">
+  carpet Area <span class="text-danger">*</span>
+  </label>
+  <div class="input-group">
+    <input class="form-control" placeholder="carpet_area" name="carpet_area" type="text" value="'.$row['carpet_area'].'" data-dtp="dtp_dl6pL">
+    
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+property  <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="property" name="property" type="text" value="'.$row['property'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+  </div>
+</div>
+';
 }
+
+
+?>
+
+
+<?php
+if(isset($_POST['dnk1'])){
+  $query=mysqli_query($conn,"select * from property where id='".$_POST['dnk1']."'");
+  $row=mysqli_fetch_array($query);
+  echo ' 
+  <div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Building Name  <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+      <input type="hidden" name="propertyid" value="'.$row['id'].'">
+         
+        <input class="form-control" placeholder="building_name" name="building_name" type="text" value="'.$row['building_name'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+              <div class="col-md-12">
+        <div class="form-group">
+          <label for="clock_in">
+          flat   <span class="text-danger">*</span>
+          </label>
+          <div class="input-group">
+            <input class="form-control" placeholder="flat" name="flat" type="text" value="'.$row['flat'].'"  data-dtp="dtp_qHHzf">
+            
+          </div>
+        </div>
+      </div>
+              
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Location <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+        <input class="form-control" placeholder="Location" name="location" type="text" value="'.$row['location'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="row">
+  <div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+Build-up Area   <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="built-up area" name="builtup_area" type="text" value="'.$row['builtup_area'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+  
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+  <label for="date">
+  carpet Area <span class="text-danger">*</span>
+  </label>
+  <div class="input-group">
+    <input class="form-control" placeholder="carpet_area" name="carpet_area" type="text" value="'.$row['carpet_area'].'" data-dtp="dtp_dl6pL">
+    
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+property  <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input class="form-control" placeholder="property" name="property" type="text" value="'.$row['property'].'"  data-dtp="dtp_qHHzf">
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+  </div>
+</div>
+';
+}
+
+
+?>
+
+
+
+
+<?php
+if(isset($_POST['dnk2'])){
+  $query=mysqli_query($conn,"select * from partners where id='".$_POST['dnk2']."'");
+  $row=mysqli_fetch_array($query);
+  echo ' 
+  <div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Building Name  <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+      <input type="hidden" name="propertyid" value="'.$row['id'].'">
+         
+        <input class="form-control" placeholder="name" name="name" type="text" value="'.$row['name'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="row">
+ <div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+Image   <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input type="file" class="form-control" value="'.$row['image'].'" name="image" >
+
+</div>
+</div>
+</div>
+ 
+</div>
+';
+}
+
+
+?>
+
+
+
+<?php
+if(isset($_POST['dnk3'])){
+  $query=mysqli_query($conn,"select * from testimonials where id='".$_POST['dnk3']."'");
+  $row=mysqli_fetch_array($query);
+  echo ' 
+  <div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="date">
+      Building Name  <span class="text-danger">*</span>
+      </label>
+      <div class="input-group">
+      <input type="hidden" name="propertyid" value="'.$row['id'].'">
+         
+        <input class="form-control" placeholder="name" name="name" type="text" value="'.$row['name'].'" data-dtp="dtp_dl6pL">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+  <label for="date">
+  Description <span class="text-danger">*</span>
+  </label>
+  <div class="input-group">
+   
+    <textarea class="form-control" placeholder="Description" name="description">'.$row['description'].'</textarea>
+    
+  </div>
+</div>
+</div>
+</div>
+ <div class="row">
+ <div class="col-md-12">
+<div class="form-group">
+<label for="clock_in">
+Image   <span class="text-danger">*</span>
+</label>
+<div class="input-group">
+<input type="file" class="form-control" value="'.$row['image'].'" name="image" >
+
+</div>
+</div>
+</div>
+ 
+</div>
+';
+}
+
+
 ?>

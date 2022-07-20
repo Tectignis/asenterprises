@@ -29,6 +29,8 @@ include("include/config.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="ribbon.css">
+  <!-- <script src="toruskit.js"></script> -->
 
   <!-- =======================================================
   * Template Name: BizLand - v3.7.0
@@ -75,6 +77,11 @@ include("include/config.php");
     color: #fff;
     border-radius: 5px;
     padding: 5px 15px;
+  }
+  .saleTag{
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 
   .nav-link{
@@ -160,6 +167,7 @@ include("include/config.php");
           <h3> FEATURED  <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
+
 
         <div class="row">
         <?php 
