@@ -3,7 +3,7 @@
 include("_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
-    header("location:index.php");
+    header("location:adminlogin.php");
  } 
  if(isset($_GET['delid'])){
   $id=mysqli_real_escape_string($conn,$_GET['delid']);
