@@ -62,11 +62,11 @@ include("include/config.php");
     padding: 5px 15px;
   }
 
-  .r_property{
+  .ddhome{
     color:#106eea !important;
 
   }
-  .r_property:before{
+  .ddhome:before{
   content: "";
     position: absolute;
     width: 100%;

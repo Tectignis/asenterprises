@@ -100,7 +100,7 @@ include("include/config.php");
       <div class="row" style="background:white; border-radius:10px; ">
           <form method="post">
                         <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
-                    		<div class="row" style="height:100px;">
+                    		<div class="row" style="height:60px;">
                    <div class="col-lg-2 col-md-2 col-sm-2" >
                         
                         </div>
