@@ -226,10 +226,16 @@ include("../_includes/sidebar.php");
                       <input type="text" name="facing" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label>Price</label>
                       <input type="text" name="price" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Flat</label>
+                      <input type="text" name="flat" class="form-control">
                     </div>
                   </div>
                 </div>

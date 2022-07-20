@@ -5,10 +5,11 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="index3.html" class="nav-link">Firm name</a>
+      <a href="#" class="nav-link">ASENTERPRISES</a>
     </li>
     
   </ul>
 
-
+  <div class="text-md-right mr-5 d-flex float-right" style="width:100%;justify-content:right"> <a class="btn btn-smb btn-outline-primary rounded-pill" href="logout.php"><i class="fas fa-sign-out fa-spin fa-1x" aria-hidden="true"></i>
+            Logout </a> </div>
 </nav>

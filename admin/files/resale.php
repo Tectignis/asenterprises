@@ -1,12 +1,21 @@
+
 <?php
 include("../_includes/config.php");
-// session_start();
-// if(!isset($_SESSION['id'])){
-//     header("location:index.php");
-// } ?>
+session_start();
+if(!isset($_SESSION['id'])){
+    header("location:adminlogin.php");
+ } 
+ if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from property where id='$id'");
+  if($sql=1){
+      header("location:resale.php");
+  }
+  }
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,15 +67,14 @@ include("../_includes/sidebar.php");
           <div class="row">
             <div class="col-12">
 
-              <!-- /.card -->
-              <div class="card-tools my-3" style="text-align:end;">
+             
+              <div class="card">
+              <div class="card-header">
+                  <h3 class="card-title" style="padding-top:25px;">List of Resale</h3>
+                       <div class="card-tools my-3" style="text-align:end;">
                 <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
                   data-original-title="Click here to Add project">Add Project</a>
-
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">DataTable with default features</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -109,12 +117,12 @@ include("../_includes/sidebar.php");
                         </td>  
                         <td>
                        
-                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                         style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                                                
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
+                        <a href="resale.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                        <a href="manual-attendance.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-primary btn-rounded btn-icon"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+                        <button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button>
                                      
                                    
                                                          
@@ -128,6 +136,27 @@ include("../_includes/sidebar.php");
                     </tbody>
 
                   </table>
+
+                  <div class="modal fade closemaual" id="dnkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post" action="check.php">
+      <div class="modal-body body1">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" name="manualAttendanceEdit">Save changes</button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>
                 </div>
                 <!-- /.card-body -->
               </div>
