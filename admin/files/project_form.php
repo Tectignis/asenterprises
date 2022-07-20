@@ -235,7 +235,16 @@ include("../_includes/sidebar.php");
                   <div class="col-md-3">
                     <div class="form-group">
                       <label>Flat</label>
-                      <input type="text" name="flat" class="form-control">
+                      
+                      <select class="select2" data-placeholder="Select a flat" name="flat" style="width: 100%;">
+                        <option value="select" disabled>select</option>
+                        <option value="1rk">1rk</option>
+                        <option value="1bhk">1bhk</option>
+                        <option value="2bhk">2bhk</option>
+                        <option value="3bhk">3bhk</option>
+                        <option value="4bhk">4bhk</option>
+
+                      </select>
                     </div>
                   </div>
                 </div>

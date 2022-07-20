@@ -94,7 +94,7 @@ include("../_includes/sidebar.php");
               <div class="card-header">
                   <h3 class="card-title" style="padding-top:25px;">List of Partners</h3>
                        <div class="card-tools my-3" style="text-align:end;">
-                <a class="btn btn-primary" href="partners.php" data-tt="tooltip" title=""
+                <a class="btn btn-primary" href="partners_form.php" data-tt="tooltip" title=""
                   data-original-title="Click here to Add partners">Add Partners</a>
               </div>
                 </div>
