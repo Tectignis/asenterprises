@@ -2,8 +2,8 @@
 include("_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
-    header("location:index.php");
-} 
+    header("location:adminlogin.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
