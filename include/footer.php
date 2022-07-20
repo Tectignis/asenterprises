@@ -44,8 +44,8 @@
           <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
           <div class="social-links mt-3">
            
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.facebook.com" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com" class="instagram"><i class="bx bxl-instagram"></i></a>
            
           </div>
         </div>
