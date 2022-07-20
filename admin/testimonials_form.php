@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])){
         move_uploaded_file($tmp_name,$path);
         $query = "INSERT INTO `testimonials`(`name`, `description`, `image`) VALUES ('$name','$description','$image')";
         if (mysqli_query($conn, $query)){
-          echo "<script> alert ('New record has been added successfully !');</script>";
+          echo "<script> alert ('New record has been added successfully !');window.location='testimonials.php'</script>";
        } else {
           echo "<script> alert ('connection failed !');</script>";
        }
