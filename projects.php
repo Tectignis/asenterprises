@@ -100,11 +100,11 @@ include("include/config.php");
       <div class="row" style="background:white; border-radius:10px; ">
           <form method="post">
                         <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
-                    		<div class="row" style="height:60px;">
-                        <div class="col-lg-1 col-md-1 col-sm-1" >
+                    		<div class="row" style="height:100px;">
+                   <div class="col-lg-2 col-md-2 col-sm-2" >
                         
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top:3px; margin-top:9px;">
+                        <div class="col-lg-8 col-md-12 col-sm-8" style="margin-top:9px;">
                      
                         <label>Sort by:</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <?php 

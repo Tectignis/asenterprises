@@ -1,9 +1,9 @@
 
 <?php
-include("../_includes/config.php");
+include("_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
-    header("location:index.php");
+    header("location:adminlogin.php");
  } 
  if(isset($_GET['delid'])){
   $id=mysqli_real_escape_string($conn,$_GET['delid']);
@@ -25,21 +25,21 @@ if(!isset($_SESSION['id'])){
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
     <?php
-include("../_includes/header.php");
-include("../_includes/sidebar.php");
+include("_includes/header.php");
+include("_includes/sidebar.php");
  ?>
     <!-- /.navbar -->
 
@@ -140,32 +140,32 @@ include("../_includes/sidebar.php");
 
     <?php
 
-include("../_includes/footer.php");
+include("_includes/footer.php");
  ?>
   </div>
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- DataTables  & Plugins -->
-  <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="../plugins/jszip/jszip.min.js"></script>
-  <script src="../plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="../plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="plugins/jszip/jszip.min.js"></script>
+  <script src="plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
+  <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="../dist/js/demo.js"></script>
+  <script src="dist/js/demo.js"></script>
   <!-- Page specific script -->
   <script>
     $(function () {
