@@ -8,7 +8,7 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - BizLand Bootstrap Template</title>
+  <title>ASENTERPRISES</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,96 +40,108 @@ include("include/config.php");
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  
-  <!-- ======= Header ======= -->
-  <?php include("include/header.php"); ?>
-  <!-- End Header -->
+<?php include("include/header.php"); ?>
 
+ 
   <main id="main" data-aos="fade-up">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    
-    <!-- Breadcrumbs Section -->
+    <section class="breadcrumbs">
+      <div class="container">
+   
+        <div class="align-items-center" style="text-align:center;">
+           <h2>  HOME LOANS STARTS @7.30%</h2>
+          
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
-      <?php 
-                     $id=$_GET['id'];
-                     $sql=mysqli_query($conn,"select * from `property` where id='$id'");
-                 
-                      while($arr=mysqli_fetch_array($sql)){
-                     ?>
+
         <div class="row gy-4">
 
           <div class="col-lg-8">
-         
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image'];?>" alt=""></a>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
                 </div>
 
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image2'];?>" alt=""></a>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
                 </div>
 
-
-                
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image3'];?>" alt=""></a>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
                 </div>
-
-
-                
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image4'];?>" alt=""></a>
-                </div>
-
 
               </div>
               <div class="swiper-pagination"></div>
-            </div>
-            <div class="portfolio-description">
-              <h2><?php echo $arr['building_name'];?></h2>
-              <p>
-              <?php echo $arr['description'];?>
-              </p>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>DETAILS</h3>
+              <h3>HOME LONES</h3>
               <ul>
-                <li><strong>Price</strong>: <?php echo $arr['price'];?></li>
-                <li><strong>Flat</strong>: <?php echo $arr['flat'];?></li>
-                <li><strong>Carpet Area</strong>: <?php echo $arr['carpet_area'];?></li>
-                <li><strong>Builtup Area</strong>: <?php echo $arr['builtup_area'];?></li>
-                <li><strong>Water Source</strong>: <?php echo $arr['water_source'];?></li>
-                <li><strong>Age Of Construction</strong>: <?php echo $arr['age_of_construction'];?></li>
-                <li><strong>Power Backup</strong>: <?php echo $arr['power_backup'];?></li>
-                <li><strong>Facing</strong>:<?php echo $arr['facing'];?></li>
-                <li><strong>Furnishing</strong>: <?php echo $arr['furnishing'];?></li>
-                
+                <li>SBI Home Loans</li>
+                <li> AXIS Bank Home Loan</li>
+                <li> HDFC Home Loan</li>
+                <li> Bank Of India Home Loan</li>
+                <li>ICICI Home Loan</li>
+                <li>PNB Home Loan</li>
               </ul>
             </div>
-           
+            
           </div>
+          <div class="portfolio-description">
+              <h5>HOME LOANS! CHOOSE HOW WOULD YOU LIKE TO AVAIL YOUR HOME LOAN</h5>
+              <p>
+              As a piece of the general bundle, we at The Property Adviser offer you a different sum solely for this reason. Invest the energy in making your home your home as opposed to on documents. While we finance your fantasy home we likewise comprehend that you have to spend on the apparatuses and fittings to make the place yours.
 
+              </p>
+            </div>
         </div>
-<?php } ?>
+
       </div>
     </section><!-- End Portfolio Details Section -->
+     <!-- ======= Clients Section ======= -->
+   <section id="clients" class="clients section-bg">
+  
+  <div class="container" data-aos="zoom-in">
+  <div class="section-title">
+  
+      <h4>Our Partners </h4>
+    
+    </div>
+    
+    <div class="row">
+<?php 
+                 
+                 $sql=mysqli_query($conn,"select * from `partners`");
+             
+                  while($arr=mysqli_fetch_array($sql)){
+                 ?>
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+      
+      </div>
+
+     <?php } ?>
+
+    </div>
+ 
+  </div>
+
+</section><!-- End Clients Section -->
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
   <?php include("include/footer.php"); ?>
- <!-- End Footer -->
-
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

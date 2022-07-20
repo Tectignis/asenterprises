@@ -8,12 +8,12 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> Featured Property</title>
+  <title>Featured Property</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -52,17 +52,32 @@ include("include/config.php");
   .price-box{
     position: fixed;
     top: 324px;
-    right: 25px;
+    right: 22px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     background-image: linear-gradient(310deg,#7928ca,#106eea);
     color: #fff;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 15px;
   }
 
-  
+  .r_property{
+    color:#106eea !important;
+
+  }
+  .r_property:before{
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #106eea;
+    width: 100% !important;
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: underline;
+}
   </style>
 </head>
 
@@ -83,28 +98,32 @@ include("include/config.php");
   <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
       <div class="row" style="background:white; border-radius:10px; ">
-          <form onsubmit="return false;">
+          <form method="post">
                         <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
                     		<div class="row" style="height:60px;">
                         <div class="col-lg-1 col-md-1 col-sm-1" >
                         
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-" style="margin-top:3px; margin-top:9px;">
+                        <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top:3px; margin-top:9px;">
                      
                         <label>Sort by:</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                           <input type="checkbox" class="bhk" id="1rk" value="1">&nbsp;<label for="1rk">1 RK</label>
+                        <?php 
+                        
+                        
+                        ?>
+                           <input type="checkbox" class="bhk" id="RK" value="1rk" name="rk1[ ]">&nbsp;<label for="1rk">1 RK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk1" value="2">&nbsp;<label for="bhk1">1 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk1" value="1bhk" name="rk1[ ]">&nbsp;<label for="bhk1">1 BHK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk2" value="3">&nbsp;<label for="bhk2">2 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk2" value="2bhk" name="rk1[ ]">&nbsp;<label for="bhk2">2 BHK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk3" value="4">&nbsp;<label for="bhk3">3 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk3" value="3bhk" name="rk1[ ]">&nbsp;<label for="bhk3">3 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" class="bhk" id="bhk4" value="4">&nbsp;<label for="bhk4">4 BHK</label>
+                        <input type="checkbox" class="bhk" id="bhk4" value="4bhk" name="rk1[ ]">&nbsp;<label for="bhk4">4 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						   <input type="button" class="btn btn-primary" value="Sort" onclick="sort_listing();">
+						   <input type="submit" class="btn btn-primary" value="Sort" name="sortbhk" onclick="sort_listing();">
 						   
                         </div>
                             
@@ -115,14 +134,17 @@ include("include/config.php");
 </div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> SALE  <span>PROPERTIES </span></h3>
+          <h3> FEATURED <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
         <?php 
-                     
-                     $sql=mysqli_query($conn,"select * from `property`");
+                      if(isset($_POST['sortbhk'])){   
+                        $rk=$_POST['rk1'];
+                        foreach($rk as $bhk){
+                         $sql=mysqli_query($conn,"select * from `property` where flat='$bhk' and feature='YES'");
+                        
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
@@ -150,11 +172,48 @@ include("include/config.php");
                 <h6><?php echo $arr['flat'];?></h6>
                 <span><?php echo $arr['carpet_area'];?>sq.ft <span>
                 </div>
-               
+
+              
             </div>
             </div>
           </div>
-          <?php } ?>
+          <?php } } 
+        } else{
+          $sql=mysqli_query($conn,"select * from `property` where  feature='YES'");
+                    
+                 
+          while($arr=mysqli_fetch_array($sql)){
+        ?>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          
+          <div class="member">
+         
+            <div class="member-img" style="height:340px; width:420px;">
+        
+              <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+              <div class="tag">
+             <span><?php echo $arr['property'];?></span>
+                    </div>
+              <div class="price-box">
+            <span>₹<?php echo $arr['price'];?></span>
+            </div>
+            </div>
+            <div class="member-info d-flex">
+              <div class="col-8">
+              <h4><a href="info.php?id=<?php echo $arr['id'];?>"><?php echo $arr['building_name'];?></a></h4>
+              <span><?php echo $arr['location'];?></span>
+              </div>
+              
+              <div class="col-4">
+              <h6><?php echo $arr['flat'];?></h6>
+              <span><?php echo $arr['carpet_area'];?>sq.ft <span>
+              </div>
+
+            
+          </div>
+          </div>
+        </div>
+        <?php } }  ?>
         </div>
           
 

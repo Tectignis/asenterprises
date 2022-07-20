@@ -32,7 +32,7 @@ echo 'connection failed';
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -120,8 +120,8 @@ echo 'connection failed';
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>8976635770</p>
-              <p>9221803185</p>
+              <p>8976635770 / 9221803185</p>
+             
             </div>
           </div>
 

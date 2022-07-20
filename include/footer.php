@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
+          <h4> Links</h4>
           <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="aboutus.php">About us</a></li>
@@ -31,7 +31,16 @@
           </ul>
         </div>
 
-        
+        <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home Loan Starts @7.30%</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms & Conditions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Disclaimer</a></li>
+             
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Our Social Networks</h4>
@@ -57,7 +66,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">TECTIGNIS IT SOLUTIONS.</a>
+      Designed by <a href="https://tectignis.in">TECTIGNIS IT SOLUTIONS.</a>
     </div>
   </div>
 </footer><!-- End Footer -->
