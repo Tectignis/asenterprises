@@ -39,6 +39,9 @@ include("include/config.php");
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 <style>
+  .viewMore{
+    background-image: linear-gradient(310deg,#7928ca,#106eea);
+  }
   .ddhome{
     color:#106eea !important;
   }
@@ -207,7 +210,7 @@ include("include/config.php");
           <?php } ?>
         </div>
         <div class="text-center">
-        <button type="button" class="btn btn-primary" style="float:center;"><a href="f_property.php" style="color:white;">View All</a></button> 
+        <button type="button" class="btn viewMore" style="float:center;"><a href="f_property.php" style="color:white;">View More</a></button> 
         </div>
       </div>
     </section><!-- End Team Section -->
@@ -263,7 +266,7 @@ include("include/config.php");
           <?php } ?>
         </div>
         <div class="text-center">
-        <button type="button" class="btn btn-primary" style="float:center;"><a href="sale_property.php" style="color:white;">View All</a></button> 
+        <button type="button" class="btn viewMore" style="float:center;"><a href="sale_property.php" style="color:white;">View More</a></button> 
         </div>
       </div>
     </section><!-- End Team Section -->
@@ -316,7 +319,7 @@ include("include/config.php");
           <?php } ?>
         </div>
         <div class="text-center">
-        <button type="button" class="btn btn-primary" style="float:center;"><a href="resale_property.php" style="color:white;">View All</a></button> 
+        <button type="button" class="btn viewMore" style="float:center;"><a href="resale_property.php" style="color:white;">View More</a></button> 
         </div>
 
       </div>
