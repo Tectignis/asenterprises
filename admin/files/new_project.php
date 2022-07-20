@@ -11,7 +11,43 @@ if(isset($_GET['delid'])){
       header("location:new_project.php");
   }
   }
-  ?>
+
+  
+  if(isset($_POST['propertyedit'])){
+    $id=$_POST['propertyid'];
+    $building_name = $_POST['building_name'];
+    $flat = $_POST['flat'];
+    $location = $_POST['location'];
+    $builtup_area = $_POST['builtup_area'];
+    $carpet_area = $_POST['carpet_area'];
+    $property = $_POST['property'];
+   
+    $sql="UPDATE `property` SET `building_name`='$building_name',`flat`='$flat',`location`='$location',`builtup_area`='$builtup_area',`carpet_area`='$carpet_area',`property`='$property' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)){
+      // header("location:new_project.php");
+      echo "<script>alert('Successfully Updated');</script>";
+   } else {
+      echo "<script> alert ('connection failed !');window.location.href='new_project.php'</script>";
+   }
+  }
+
+//features
+if(isset($_GET['statusyes'])){
+    $pid=$_GET['statusyes'];
+        $query=mysqli_query($conn,"UPDATE `property` SET `feature`='NO' where property_id='$pid'");
+    if($query==1){
+        header("location:new_project.php");
+    }
+}
+
+if(isset($_GET['statusno'])){
+    $pid=$_GET['statusno'];
+        $query=mysqli_query($conn,"UPDATE `property` SET `feature`='YES' where property_id='$pid'");
+    if($query==1){
+        header("location:new_project.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,6 +118,7 @@ include("../_includes/sidebar.php");
                       <tr>
                       <th>Property ID</th>
                         <th>Building Name</th>
+                        <th>Flat</th>
                         <th>Location</th>
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
@@ -103,6 +140,9 @@ include("../_includes/sidebar.php");
                           <?php echo $arr['building_name'];?>
                         </td>
                         <td>
+                          <?php echo $arr['flat'];?>
+                        </td>
+                        <td>
                           <?php echo $arr['location'];?>
                         </td>
                         <td>
@@ -113,12 +153,19 @@ include("../_includes/sidebar.php");
                         </td>
                         <td>
                           <?php echo $arr['property'];?>
-                        </td>    
-                        <td>
-                          <?php echo $arr['property'];?>
                         </td>  
-                        <td>
-<button  type="button" class="btn btn-sm btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                        
+                        
+                        <td><?php if($arr['feature']=='YES'){
+                      echo "<a href='new_project.php?statusyes=".$arr['property_id']."' class='badge badge-success'>YES</a>";
+                    } else if($arr['feature']=='NO'){
+                      echo "<a href='new_project.php?statusno=".$arr['property_id']."' class='badge badge-danger'>NO</a>";
+                    }?></td>
+
+
+
+<td>
+<button type="button" class="btn btn-sm btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
  style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                         
  <a href="new_project.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
@@ -148,12 +195,12 @@ include("../_includes/sidebar.php");
                                     <span aria-hidden="true">&times;</span>
                                   </button>
       </div>
-      <form method="post" action="check.php">
+      <form method="post">
       <div class="modal-body body1">
       </div>
     <div class="modal-footer">
     <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary" name="manualAttendanceEdit">Save changes</button>
+      <button type="submit" class="btn btn-primary" name="propertyedit">Save changes</button>
     </div>
   </form>
   </div>
