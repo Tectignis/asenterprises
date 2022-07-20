@@ -1,5 +1,5 @@
 <?php
-include("../_includes/config.php");
+include("_includes/config.php");
 session_start();
 $dnk=session_destroy();
 if($dnk){
