@@ -13,7 +13,7 @@ include("_includes/config.php");
         move_uploaded_file($tmp_name,$path);
         $query = "INSERT INTO `partners`(`name`, `image`) VALUES ('$name','$image')";
         if (mysqli_query($conn, $query)){
-          echo "<script> alert ('New record has been added successfully !');</script>";
+          echo "<script> alert ('New record has been added successfully !');window.location='partners.php'</script>";
        } else {
           echo "<script> alert ('connection failed !');</script>";
        }
