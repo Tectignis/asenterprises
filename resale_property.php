@@ -113,14 +113,14 @@ include("include/config.php");
                         ?>
                            <input type="checkbox" class="bhk" id="RK" value="1rk" name="rk1[ ]">&nbsp;<label for="1rk">1 RK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk1" value="1bhk" name="rk1[ ]">&nbsp;<label for="bhk1">1 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk1" value="1BHK" name="rk1[ ]">&nbsp;<label for="bhk1">1 BHK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk2" value="2bhk" name="rk1[ ]">&nbsp;<label for="bhk2">2 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk2" value="2BHK" name="rk1[ ]">&nbsp;<label for="bhk2">2 BHK</label>
 						   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-						   <input type="checkbox" class="bhk" id="bhk3" value="3bhk" name="rk1[ ]">&nbsp;<label for="bhk3">3 BHK</label>
+						   <input type="checkbox" class="bhk" id="bhk3" value="3BHK" name="rk1[ ]">&nbsp;<label for="bhk3">3 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" class="bhk" id="bhk4" value="4bhk" name="rk1[ ]">&nbsp;<label for="bhk4">4 BHK</label>
+                        <input type="checkbox" class="bhk" id="bhk4" value="4BHK" name="rk1[ ]">&nbsp;<label for="bhk4">4 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						   <input type="submit" class="btn btn-primary" value="Sort" name="sortbhk" onclick="sort_listing();">

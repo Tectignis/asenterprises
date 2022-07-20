@@ -13,7 +13,7 @@ include("include/config.php");
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -65,22 +65,16 @@ include("include/config.php");
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+              <div class=" align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                  <img src="assets/img/img.jpg" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
+                
 
               </div>
-              <div class="swiper-pagination"></div>
+              
             </div>
           </div>
 
@@ -104,6 +98,15 @@ include("include/config.php");
               As a piece of the general bundle, we at The Property Adviser offer you a different sum solely for this reason. Invest the energy in making your home your home as opposed to on documents. While we finance your fantasy home we likewise comprehend that you have to spend on the apparatuses and fittings to make the place yours.
 
               </p>
+              <ul>
+                <li> Hassle-Free Home Loans.</li>
+                <li>Services From Your house for your New house.</li>
+                <li> No Hidden Charges.</li>
+                <li>  Maximum Funding</li>
+               
+              </ul>
+              <p>In the event that you have bought your property inside the most recent a year with your own assets, you can benefit from our renegotiate choice and take a credit up to the enrolled estimation of your property.
+Terms and Conditions</p>
             </div>
         </div>
 

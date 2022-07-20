@@ -34,11 +34,8 @@
         <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home Loan Starts @7.30%</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms & Conditions</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Disclaimer</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="loan.php">Home Loan Starts @7.30%</a></li>
              
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
 

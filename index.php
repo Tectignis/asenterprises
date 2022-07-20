@@ -13,7 +13,7 @@ include("include/config.php");
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -175,7 +175,7 @@ include("include/config.php");
         <div class="row">
         <?php 
                      
-                     $sql=mysqli_query($conn,"select * from `property` limit 4");
+                     $sql=mysqli_query($conn,"select * from `property` where feature='YES' limit 4");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
