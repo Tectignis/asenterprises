@@ -4,7 +4,15 @@ include("../_includes/config.php");
 session_start();
 if(!isset($_SESSION['id'])){
     header("location:index.php");
- } ?>
+ } 
+ if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from contactus where id='$id'");
+  if($sql=1){
+      header("location:contactus.php");
+  }
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,6 +87,7 @@ include("../_includes/sidebar.php");
                         <th>email</th>
                         <th>Description </th>
                         <th> Subject</th>
+                        <th>Action</th>
                    
                       </tr>
                     </thead>
@@ -103,6 +112,8 @@ include("../_includes/sidebar.php");
                         <td>
                           <?php echo $arr['subject'];?>
                         </td>
+                        <td>
+                        <a href="contactus.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a></td>
                                    
     </tr>     
     

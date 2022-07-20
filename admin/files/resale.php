@@ -13,6 +13,26 @@ if(!isset($_SESSION['id'])){
   }
   }
  
+  if(isset($_POST['resaleedit'])){
+    $id=$_POST['propertyid'];
+    $building_name = $_POST['building_name'];
+    $flat = $_POST['flat'];
+    $location = $_POST['location'];
+    $builtup_area = $_POST['builtup_area'];
+    $carpet_area = $_POST['carpet_area'];
+    $property = $_POST['property'];
+   
+    $sql="UPDATE `property` SET `building_name`='$building_name',`flat`='$flat',`location`='$location',`builtup_area`='$builtup_area',`carpet_area`='$carpet_area',`property`='$property' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)){
+      // header("location:new_project.php");
+      echo "<script>alert('Successfully Updated');</script>";
+   } else {
+      echo "<script> alert ('connection failed !');window.location.href='resale.php'</script>";
+   }
+  }
+  
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,12 +137,12 @@ include("../_includes/sidebar.php");
                         </td>  
                         <td>
                        
-                       <button  type="button" class="btn btn-primary btn-rounded btn-icon usereditid btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
+                       <button  type="button" class="btn btn-primary btn-rounded btn-icon resaleedit1 btn-sm" data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                         style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
                                                                
                         <a href="resale.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                        <button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-eye"></i> </button>
+                        <a href="../../info.php"><button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
                                      
                                    
                                                          
@@ -137,7 +157,7 @@ include("../_includes/sidebar.php");
 
                   </table>
 
-                  <div class="modal fade closemaual" id="dnkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade closemaual" id="dnkModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -146,12 +166,12 @@ include("../_includes/sidebar.php");
                                     <span aria-hidden="true">&times;</span>
                                   </button>
       </div>
-      <form method="post" action="check.php">
-      <div class="modal-body body1">
+      <form method="post">
+      <div class="modal-body body3">
       </div>
     <div class="modal-footer">
     <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary" name="manualAttendanceEdit">Save changes</button>
+      <button type="submit" class="btn btn-primary" name="resaleedit">Save changes</button>
     </div>
   </form>
   </div>
@@ -219,6 +239,25 @@ include("../_includes/footer.php");
       });
     });
   </script>
+    <script>
+          $(document).ready(function(){
+          $('.resaleedit1').click(function(){
+            let dnk1 = $(this).data('id');
+
+            $.ajax({
+            url: 'check.php',
+            type: 'post',
+            data: {dnk1: dnk1},
+            success: function(response3){ 
+              $('.body3').html(response3);
+              $('#dnkModal2').modal('show'); 
+            }
+          });
+          });
+
+
+          });
+          </script>
 </body>
 
 </html>
