@@ -8,7 +8,7 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resale Property</title>
+  <title> Featured Property</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -52,32 +52,17 @@ include("include/config.php");
   .price-box{
     position: fixed;
     top: 324px;
-    right: 22px;
+    right: 25px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     background-image: linear-gradient(310deg,#7928ca,#106eea);
     color: #fff;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 5px 10px;
   }
 
-  .r_property{
-    color:#106eea !important;
-
-  }
-  .r_property:before{
-  content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #106eea;
-    width: 100% !important;
-    transition: all 0.3s ease-in-out 0s;
-    text-decoration: underline;
-}
+  
   </style>
 </head>
 
@@ -104,7 +89,7 @@ include("include/config.php");
                         <div class="col-lg-1 col-md-1 col-sm-1" >
                         
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top:3px; margin-top:9px;">
+                        <div class="col-lg-8 col-md-8 col-sm-" style="margin-top:3px; margin-top:9px;">
                      
                         <label>Sort by:</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            <input type="checkbox" class="bhk" id="1rk" value="1">&nbsp;<label for="1rk">1 RK</label>
@@ -130,14 +115,14 @@ include("include/config.php");
 </div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> RESALE  <span>PROPERTIES </span></h3>
+          <h3> SALE  <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
 
         <div class="row">
         <?php 
                      
-                     $sql=mysqli_query($conn,"select * from `property` where property='resale'");
+                     $sql=mysqli_query($conn,"select * from `property`");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
@@ -165,7 +150,6 @@ include("include/config.php");
                 <h6><?php echo $arr['flat'];?></h6>
                 <span><?php echo $arr['carpet_area'];?>sq.ft <span>
                 </div>
-
                
             </div>
             </div>

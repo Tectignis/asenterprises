@@ -1,3 +1,6 @@
+<?php
+include("include/config.php");
+                       ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,51 +55,71 @@
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
-
+      <?php 
+                     $id=$_GET['id'];
+                     $sql=mysqli_query($conn,"select * from `property` where id='$id'");
+                 
+                      while($arr=mysqli_fetch_array($sql)){
+                     ?>
         <div class="row gy-4">
 
           <div class="col-lg-8">
+         
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                <div class="swiper-slide" style="height:340px; width:420px;">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image'];?>" alt=""></a>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
+                <div class="swiper-slide" style="height:340px; width:420px;">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image2'];?>" alt=""></a>
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
+
+                
+                <div class="swiper-slide" style="height:340px; width:420px;">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image3'];?>" alt=""></a>
                 </div>
+
+
+                
+                <div class="swiper-slide" style="height:340px; width:420px;">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image4'];?>" alt=""></a>
+                </div>
+
 
               </div>
               <div class="swiper-pagination"></div>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2><?php echo $arr['building_name'];?></h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              <?php echo $arr['description'];?>
               </p>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>DETAILS</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Price</strong>: <?php echo $arr['price'];?></li>
+                <li><strong>Carpet Area</strong>: <?php echo $arr['carpet_area'];?></li>
+                <li><strong>Builtup Area</strong>: <?php echo $arr['builtup_area'];?></li>
+                <li><strong>Water Source</strong>: <?php echo $arr['water_source'];?></li>
+                <li><strong>Age Of Construction</strong>: <?php echo $arr['age_of_construction'];?></li>
+                <li><strong>Power Backup</strong>: <?php echo $arr['power_backup'];?></li>
+                <li><strong>Facing</strong>:<?php echo $arr['facing'];?></li>
+                <li><strong>Furnishing</strong>: <?php echo $arr['furnishing'];?></li>
+                
               </ul>
             </div>
            
           </div>
 
         </div>
-
+<?php } ?>
       </div>
     </section><!-- End Portfolio Details Section -->
 

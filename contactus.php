@@ -55,6 +55,25 @@ echo 'connection failed';
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .contact_head{
+    color:#106eea !important;
+   
+  }
+  .contact_head:before{
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #106eea;
+    width: 100% !important;
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: underline;
+}
+
+  </style>
 </head>
 
 <body>
@@ -75,7 +94,7 @@ echo 'connection failed';
         <div class="section-title">
        
           <h3><span>Contact Us</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -83,7 +102,9 @@ echo 'connection failed';
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p> Slyon Homes CHS,
+           Shop No.6, Plot No.87,
+            Sector -22, Kamothe-410208</p>
             </div>
           </div>
 
@@ -91,7 +112,7 @@ echo 'connection failed';
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
-              <p>contact@example.com</p>
+              <p>aditismita927@gmail.com</p>
             </div>
           </div>
 
@@ -99,7 +120,8 @@ echo 'connection failed';
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <p>8976635770</p>
+              <p>9221803185</p>
             </div>
           </div>
 

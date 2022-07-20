@@ -36,6 +36,24 @@ include("include/config.php");
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .about_head{
+    color:#106eea !important;
+    
+  }
+  .about_head:before{
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #106eea;
+    width: 100% !important;
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: underline;
+}
+  </style>
 </head>
 
 <body>
@@ -84,14 +102,15 @@ Despite Being new in the market more than 500+ Happy customers like you have fou
 
                       <ul>
               <li>
-                <i class="bx bx-store-alt"></i>
+                <i class="bx bx-world"></i>
+              
                 <div>
                   <h5>Vision</h5>
                   <p>To help families find their best buy that suits their needs.</p>
                 </div>
               </li>
               <li>
-                <i class="bx bx-images"></i>
+                <i class="bx bx-line-chart"></i>
                 <div>
                   <h5>Mission</h5>
                   <p>To Provide you Hassle-Free services under one Roof
@@ -150,43 +169,35 @@ vision.</p>
 
 
      <!-- ======= Clients Section ======= -->
-     <section id="clients" class="clients section-bg">
-      <div class="container" data-aos="zoom-in">
-      <div class="section-title">
-      
+   <section id="clients" class="clients section-bg">
+  
+  <div class="container" data-aos="zoom-in">
+  <div class="section-title">
+  
       <h4>Our Partners </h4>
     
     </div>
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
+    
+    <div class="row">
+<?php 
+                 
+                 $sql=mysqli_query($conn,"select * from `partners`");
+             
+                  while($arr=mysqli_fetch_array($sql)){
+                 ?>
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+      
       </div>
-    </section><!-- End Clients Section -->
+
+     <?php } ?>
+
+    </div>
+ 
+  </div>
+
+</section><!-- End Clients Section -->
+
 </main><!-- End #main -->
 
 <?php include("include/footer.php"); ?>
