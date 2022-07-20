@@ -176,16 +176,15 @@ include("include/config.php");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch ps-0" data-aos="fade-up" data-aos-delay="100">
           
-            <div class="member">
+            <div class="member p-0">
+            <div class="ribbon-corner ribbon-fold" style="z-index:99999999;" data-tor="place.left place.top"> <span><?php echo $arr['property'];?></span></div>
            
               <div class="member-img" style="height:340px; width:420px;">
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
-                <div class="tag">
-               <span><?php echo $arr['property'];?></span>
-                      </div>
+               
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
               </div>
@@ -207,8 +206,9 @@ include("include/config.php");
           </div>
           <?php } ?>
         </div>
-        <button type="button" class="btn btn-primary" style="float:right;"><a href="f_property.php" style="color:white;">View All</a></button> 
-
+        <div class="text-center">
+        <button type="button" class="btn btn-primary" style="float:center;"><a href="f_property.php" style="color:white;">View All</a></button> 
+        </div>
       </div>
     </section><!-- End Team Section -->
  
@@ -237,11 +237,10 @@ include("include/config.php");
             <div class="member">
            
               <div class="member-img" style="height:340px; width:420px;">
+
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
-                <div class="tag">
-               <span><?php echo $arr['property'];?></span>
-                      </div>
+               
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
               </div>
@@ -263,8 +262,9 @@ include("include/config.php");
           </div>
           <?php } ?>
         </div>
-        <button type="button" class="btn btn-primary" style="float:right;"><a href="sale_property.php" style="color:white;">View All</a></button> 
-
+        <div class="text-center">
+        <button type="button" class="btn btn-primary" style="float:center;"><a href="sale_property.php" style="color:white;">View All</a></button> 
+        </div>
       </div>
     </section><!-- End Team Section -->
  
@@ -293,9 +293,7 @@ include("include/config.php");
               <div class="member-img" style="height:340px; width:420px;">
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
-                <div class="tag">
-               <span><?php echo $arr['property'];?></span>
-                      </div>
+             
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
               </div>
@@ -317,8 +315,9 @@ include("include/config.php");
           </div>
           <?php } ?>
         </div>
-        <button type="button" class="btn btn-primary" style="float:right;"><a href="resale_property.php" style="color:white;">View All</a></button> 
-
+        <div class="text-center">
+        <button type="button" class="btn btn-primary" style="float:center;"><a href="resale_property.php" style="color:white;">View All</a></button> 
+        </div>
 
       </div>
     </section><!-- End Team Section -->
