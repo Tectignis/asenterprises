@@ -41,8 +41,9 @@ if(!isset($_SESSION['id'])){
         $path = "dist/img/".$image4;
         move_uploaded_file($tmp_name,$path);
 
+        $features = "NO";
 
-        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4')";
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4','$features')";
         if (mysqli_query($conn,$query)){
           echo "<script> alert ('New record has been added successfully !');</script>";
        } else {
