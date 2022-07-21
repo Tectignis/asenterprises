@@ -6,6 +6,7 @@ if(!isset($_SESSION['id'])){
 }
     if(isset($_POST['submit']))
     {
+      $icon="";
         $building_name = $_POST['building_name'];
         $property = $_POST['property'];
         $price = $_POST['price'];
@@ -16,7 +17,7 @@ if(!isset($_SESSION['id'])){
         $water_source= $_POST['water_source'];
         $furnishing = $_POST['radio2'];
         $amenities = $_POST['amenities'];
-        foreach($amenities as $chkl1){$chkl1 .= $chkl1.",";}
+        foreach($amenities as $chkl1){$chkl1.= $chkl1.",";}
         $facing= $_POST['facing'];
         $power_backup = $_POST['radio1'];
         $age_of_construction = $_POST['age_of_construction'];
@@ -43,7 +44,7 @@ if(!isset($_SESSION['id'])){
 
         $features = "NO";
 
-        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4','$features')";
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`,`icon`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4','$features','$icon')";
         if (mysqli_query($conn,$query)){
           echo "<script> alert ('New record has been added successfully !');</script>";
        } else {
@@ -289,26 +290,41 @@ if(!isset($_SESSION['id'])){
                       <div class="form-group">
                         <div class="form-check">
                           <input class="form-check-input" value="Lift" name=amenities[] type="checkbox">
+                          
+                          <i class="fas fa-tram"></i>
+                          
+                          <!-- <i class=" nav-icon fa-solid fa-elevator"></i> -->
                           <label class="form-check-label">Lift</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Gymnasium" name=amenities[] type="checkbox">
+                          
+                          <i class="nav-icon fas fa-solid fa-dumbbell"></i>
                           <label class="form-check-label">Gymnasium</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Security" name=amenities[] type="checkbox">
+                          
+                          <i class="fas fa-user-lock"></i>
                           <label class="form-check-label">Security</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Kids Play Area" name=amenities[] type="checkbox">
+                          <!-- <i class="fa-solid fa-arrow-up-from-water-pump"></i> -->
+                         
+                          <i class="fas fa-skating"></i>
                           <label class="form-check-label">Kids Play Area</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Swimming Pool" name=amenities[] type="checkbox">
+                         
+                          <i class="fas fa-swimmer"></i>
                           <label class="form-check-label">Swimming Pool</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Terrace garden" name=amenities[] type="checkbox">
+                          
+                          <i class="nav-icon fas fa-solid fa-building"></i>
                           <label class="form-check-label">Terrace garden</label>
                         </div>
                       </div>
@@ -321,27 +337,41 @@ if(!isset($_SESSION['id'])){
                         <div class="form-check">
                           <input class="form-check-input" value="Club House" name="amenities[ ]"
                             type="checkbox">
+                            <i class="fas fa-dice"></i>
+                            <!-- <i class="nav-icon fas fa-solid fa-club"></i> -->
                           <label class="form-check-label">Club House</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" value="Cycling & Jogging Track" name="amenities[ ]" type="checkbox">
+                          
+                          <i class="fas fa-biking"></i>
                           <label class="form-check-label">Cycling & Jogging Track</label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" name="amenities[ ]" value="Reserved Parking" type="checkbox">
+                          
+                          <i class='fas fa-parking'></i>
                           <label class="form-check-label">Reserved Parking</label>
                         </div>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" value="Kids Splash Pool" name=amenities[] type="checkbox">
+                       
+                        <i class='fas fa-bath'></i>
+                        
                         <label class="form-check-label">Kids Splash Pool</label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" value="Volleyball court" name=amenities[] type="checkbox">
+                        <input class="form-check-input" value="Volleyball court" name=amenities[] type="checkbox">
+                        <i class="fas fa-volleyball-ball"></i>
+                        
                         <label class="form-check-label">Volleyball court</label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" value="Intercom Facility" name=amenities[] type="checkbox">
+                        <i class="fas fa-newspaper"></i>
+                         
                         <label class="form-check-label">Intercom Facility</label>
                       </div>
                     </div>
