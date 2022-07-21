@@ -32,7 +32,7 @@ echo 'connection failed';
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/fav.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
