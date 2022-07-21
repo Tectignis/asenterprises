@@ -189,7 +189,7 @@ if(isset($_GET['statusno'])){
                                         
  <a href="new_project.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
 
- <a href="../../info.php"><button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+ <a href="../info.php?id=<?php echo $arr['id'];?>"><button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm" style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
               
             
                                   

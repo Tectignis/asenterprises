@@ -120,6 +120,7 @@ if(!isset($_SESSION['id'])){
                       <tr>
                       <th>Property ID</th>
                         <th>Building Name</th>
+                        <th>Flat</th>
                         <th>Location</th>
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
@@ -141,6 +142,9 @@ if(!isset($_SESSION['id'])){
                           <?php echo $arr['building_name'];?>
                         </td>
                         <td>
+                          <?php echo $arr['flat'];?>
+                        </td>
+                        <td>
                           <?php echo $arr['location'];?>
                         </td>
                         <td>
@@ -159,7 +163,7 @@ if(!isset($_SESSION['id'])){
                                                                
                         <a href="rent.php?delid=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-rounded btn-icon btn-sm"  style="color: aliceblue"> <i class="fas fa-trash"></i> </button></a>
                        
-                        <a href="../../info.php"><button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
+                        <a href="../info.php?id=<?php echo $arr['id'];?>"><button type="button" class="btn btn-primary btn-rounded btn-icon btn-sm"  data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
                                      
                                    
                                                          

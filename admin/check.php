@@ -29,7 +29,7 @@ if(isset($_POST['dnk'])){
               <div class="col-md-12">
         <div class="form-group">
           <label for="clock_in">
-          flat   <span class="text-danger">*</span>
+          flat <span class="text-danger">*</span>
           </label>
           <div class="input-group">
             <input class="form-control" placeholder="flat" name="flat" type="text" value="'.$row['flat'].'"  data-dtp="dtp_qHHzf">

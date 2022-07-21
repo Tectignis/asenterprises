@@ -105,8 +105,8 @@ if(!isset($_SESSION['id'])){
                   <div class="col-md-6">
 
                     <div class="form-group">
-                      <label>Image</label>
-                      <input type="file" name="image" class="form-control">
+                      <label>Image</label><span style="color:red;">(Only webp Format)</span>
+                      <input type="file" name="image" class="form-control" accept=".webp">
                     </div>
                     <!-- /.form-group -->
 
