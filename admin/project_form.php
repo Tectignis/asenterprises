@@ -17,7 +17,7 @@ if(!isset($_SESSION['id'])){
         $water_source= $_POST['water_source'];
         $furnishing = $_POST['radio2'];
         $amenities = $_POST['amenities'];
-        foreach($amenities as $chkl1){$chkl1.= $chkl1.",";}
+        foreach($amenities as $chkl1){$chkl2.= $chkl1.",";}
         $facing= $_POST['facing'];
         $power_backup = $_POST['radio1'];
         $age_of_construction = $_POST['age_of_construction'];
@@ -44,7 +44,7 @@ if(!isset($_SESSION['id'])){
 
         $features = "NO";
 
-        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`,`icon`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl1','$description','$image1','$image2','$image3','$image4','$features','$icon')";
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`,`icon`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl2','$description','$image1','$image2','$image3','$image4','$features','$icon')";
         if (mysqli_query($conn,$query)){
           echo "<script> alert ('New record has been added successfully !');</script>";
        } else {
@@ -137,7 +137,7 @@ if(!isset($_SESSION['id'])){
                     <div class="form-group">
                     <label>Property</label>
                       <select class="select2" data-placeholder="Select a State" name="property" style="width: 100%;">
-                        <option value="select" disabled>select</option>
+                      <option value="" selected disabled>Select</option>
                         <option value="project">New Project</option>
                         <option value="resale">Resale</option>
                         <option value="rent">Rent</option>
@@ -179,7 +179,7 @@ if(!isset($_SESSION['id'])){
                       <label>Age of Construction</label>
                       <select class="select2" name="age_of_construction" data-placeholder="Age of Construction"
                         style="width: 100%;">
-                        <option value="select" disabled>select</option>
+                        <option value="" selected disabled>Select</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -231,7 +231,7 @@ if(!isset($_SESSION['id'])){
                       <label>Flat</label>
                       
                       <select class="select2" data-placeholder="Select a flat" name="flat" style="width: 100%;">
-                        <option value="select" disabled>select</option>
+                      <option value="" selected disabled>Select</option>
                         <option value="1RK">1RK</option>
                         <option value="1BHK">1BHK</option>
                         <option value="2BHK">2BHK</option>
@@ -363,7 +363,7 @@ if(!isset($_SESSION['id'])){
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" value="Volleyball court" name=amenities[] type="checkbox">
-                        <input class="form-check-input" value="Volleyball court" name=amenities[] type="checkbox">
+                        
                         <i class="fas fa-volleyball-ball"></i>
                         
                         <label class="form-check-label">Volleyball court</label>
