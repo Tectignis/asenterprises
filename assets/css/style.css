@@ -1048,7 +1048,7 @@ section {
 .portfolio-details .portfolio-info {
   padding: 30px;
   box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
-  height:76%;
+  /* height:76%; */
 }
 .portfolio-details .portfolio-info h3 {
   font-size: 17px;

@@ -24,8 +24,10 @@ include("include/config.php");
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="admin/plugins/fontawesome-free/css/all.min.css">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -103,7 +105,7 @@ include("include/config.php");
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" style="height: 383px;">
+            <div class="portfolio-info" style="">
               <h3>DETAILS</h3>
               <ul>
                 <li><strong>Price</strong>: <?php echo $arr['price'];?></li>
@@ -118,12 +120,52 @@ include("include/config.php");
                 
               </ul>
             </div>
-            <div class="portfolio-info mt-2" style="height: 189px;">
+            <div class="portfolio-info my-2" >
             <h3>Amenities</h3>
             <ul>
-                <li><?php echo $arr['amenities'];?></li>
+              <li>
+              <?php 
+              $icon='';
+              // $amenities=$arr['amenities'];
+             
+
+              ?>
+              
+                <li><?php 
+                $links = array();
+                $parts =explode(',',$arr['amenities']);
+                foreach ($parts as $amenities){
+                  if($amenities=="Lift"){
+                    $icon= '<i class="fas fa-tram"></i>';
+                  }else if($amenities=="Gymnasium"){
+                    $icon= '<i class="nav-icon fas fa-solid fa-dumbbell"></i>';
+                  }else if($amenities=="Security"){
+                    $icon= '<i class="fas fa-user-lock"></i>';
+                  }else if($amenities=="Kids Play Area"){
+                    $icon= '<i class="fas fa-skating"></i>';
+                  }else if($amenities=="Swimming Pool"){
+                    $icon= '<i class="fas fa-swimmer"></i>';
+                   } else if($amenities=="Terrace garden"){
+                    $icon= '<i class="nav-icon fas fa-solid fa-building"></i>';
+                    }
+                  else if($amenities=="Club House"){
+                    $icon= '<i class="fas fa-dice"></i>';
+                  }else if($amenities=="Cycling & Jogging Track"){
+                    $icon= '<i class="fas fa-biking"></i>';
+                  }else if($amenities=="Reserved Parking"){
+                    $icon= '<i class="fas fa-parking"></i>';
+                  }else if($amenities=="Kids Splash Pool"){
+                    $icon= '<i class="fas fa-bath"></i>';
+                  }else if($amenities=="Volleyball court"){
+                    $icon= '<i class="fas fa-volleyball-ball"></i>';
+                  }else if($amenities=="Intercom Facility"){
+                    $icon= '<i class="fas fa-newspaper"></i>';
+                  }
+                  $link[]="<p>$icon $amenities</p>";
+                }
+                echo implode("<br>", $link );?></li>
                
-                
+            </li>
               </ul>
             </div>
 
