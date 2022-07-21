@@ -1,5 +1,4 @@
 
-
 <?php
 include("_includes/config.php");
 session_start();
@@ -34,50 +33,65 @@ if(!isset($_SESSION['id'])){
   ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>AS | RENT</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
-    <!-- Navbar -->
-    <?php
-include("_includes/header.php");
-include("_includes/sidebar.php");
- ?>
-    <!-- /.navbar -->
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
 
-    <!-- Main Sidebar Container -->
-   
+  <!-- Navbar -->
+  <?php
+  include("_includes/header.php");
+  include("_includes/sidebar.php");
+   ?>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+  <!-- Content Wrapper. Contains page content -->
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1> List of Rent</h1>
+              <h1>Rent Table</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">rent</li>
+                <li class="breadcrumb-item active">Rent Table</li>
               </ol>
             </div>
           </div>
@@ -90,15 +104,14 @@ include("_includes/sidebar.php");
           <div class="row">
             <div class="col-12">
 
-              <!-- /.card -->
-            
+
               <div class="card">
-              <div class="card-header">
+                <div class="card-header">
                   <h3 class="card-title" style="padding-top:25px;">List of Rent</h3>
-                       <div class="card-tools my-3" style="text-align:end;">
-                <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
-                  data-original-title="Click here to Add project">Add Project</a>
-              </div>
+                  <div class="card-tools my-3" style="text-align:end;">
+                    <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
+                      data-original-title="Click here to Add project">Add Rent</a>
+                  </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -160,8 +173,8 @@ include("_includes/sidebar.php");
                     </tbody>
 
                   </table>
-                </div>
-                <div class="modal fade closemaual" id="dnkModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                  <div class="modal fade closemaual" id="dnkModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -181,6 +194,7 @@ include("_includes/sidebar.php");
   </div>
   </div>
 </div>
+                </div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
@@ -191,18 +205,21 @@ include("_includes/sidebar.php");
         </div>
         <!-- /.container-fluid -->
       </section>
-      <!-- /.content -->
-    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-    <?php
+  <?php
 
 include("_includes/footer.php");
  ?>
-  </div>
-  <!-- ./wrapper -->
+ 
 
-  <!-- jQuery -->
-  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Control Sidebar -->  
+</div>
+<!-- ./wrapper -->
+ <!-- jQuery -->
+ <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- DataTables  & Plugins -->
@@ -242,7 +259,7 @@ include("_includes/footer.php");
       });
     });
   </script>
-      <script>
+  <script>
           $(document).ready(function(){
           $('.rentedit').click(function(){
             let dnkk = $(this).data('id');
