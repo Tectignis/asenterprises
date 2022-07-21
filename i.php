@@ -36,6 +36,7 @@ include("include/config.php");
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+ 
 </head>
 
 <body>
@@ -98,10 +99,11 @@ include("include/config.php");
               <?php echo $arr['description'];?>
               </p>
             </div>
+            
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info">
+            <div class="portfolio-info" style="height: 383px;">
               <h3>DETAILS</h3>
               <ul>
                 <li><strong>Price</strong>: <?php echo $arr['price'];?></li>
@@ -116,9 +118,14 @@ include("include/config.php");
                 
               </ul>
             </div>
+            <div class="portfolio-info mt-2" style="height: 189px;">
+            <h3>Amenities</h3>
+            </div>
+
            
           </div>
 
+        
         </div>
 <?php } ?>
       </div>

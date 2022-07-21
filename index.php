@@ -86,12 +86,11 @@ include("include/config.php");
     top: 10px;
     left: 10px;
   }
-
-  .nav-link{
-
-
-  }
-  
+.image{
+  height:340px;
+  width:420px;
+}
+ 
   </style>
 
 </head>
@@ -110,7 +109,7 @@ include("include/config.php");
       <h1>Welcome to <span>ASENTERPRISES</span></h1>
       <h2>Where Dreams Come Home.</h2>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="contactus.php" class="btn-get-started scrollto">CALL NOW</a>
         <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
       </div>
     </div>
@@ -179,12 +178,12 @@ include("include/config.php");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch ps-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 d-flexw align-items-stretch ps-0" data-aos="fade-up" data-aos-delay="100">
           
             <div class="member p-0">
             <div class="ribbon-corner ribbon-fold" style="z-index:99999999;" data-tor="place.left place.top"> <span><?php echo $arr['property'];?></span></div>
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img image" >
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                
@@ -210,7 +209,7 @@ include("include/config.php");
           <?php } ?>
         </div>
         <div class="text-center">
-        <button type="button" class="btn viewMore" style="float:center;"><a href="f_property.php" style="color:white;">View More</a></button> 
+        <button type="button" class="btn viewMore" style="float:center;"><a href="featured_property.php" style="color:white;">View More</a></button> 
         </div>
       </div>
     </section><!-- End Team Section -->
@@ -239,7 +238,7 @@ include("include/config.php");
           
             <div class="member">
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img image">
 
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
@@ -293,7 +292,7 @@ include("include/config.php");
           
             <div class="member">
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img image">
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
              
@@ -325,7 +324,57 @@ include("include/config.php");
       </div>
     </section><!-- End Team Section -->
  
-  
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <!-- <h2>Team</h2> -->
+          <h3> RENT  <span>PROPERTIES </span></h3>
+          <!-- <p>...</p> -->
+        </div>
+
+        <div class="row">
+        <?php 
+                     
+                     $sql=mysqli_query($conn,"select * from `property` where property='rent'  limit 4");
+                 
+                      while($arr=mysqli_fetch_array($sql)){
+                     ?>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          
+            <div class="member">
+           
+              <div class="member-img image" >
+
+          
+                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+               
+                <div class="price-box">
+              <span>₹<?php echo $arr['price'];?></span>
+              </div>
+              </div>
+              <div class="member-info d-flex">
+                <div class="col-8">
+                <h4><a href="info.php?id=<?php echo $arr['id'];?>"><?php echo $arr['building_name'];?></a></h4>
+                <span><?php echo $arr['location'];?></span>
+                </div>
+                
+                <div class="col-4">
+                <h6><?php echo $arr['flat'];?></h6>
+                <span><?php echo $arr['carpet_area'];?>sq.ft <span>
+                </div>
+
+               
+            </div>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+        <div class="text-center">
+        <button type="button" class="btn viewMore" style="float:center;"><a href="rent_property.php" style="color:white;">View More</a></button> 
+        </div>
+      </div>
+    </section><!-- End Team Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">

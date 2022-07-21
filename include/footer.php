@@ -12,7 +12,7 @@
           <p>
            Slyon Homes CHS, <br>
            Shop No.6, Plot No.87,<br>
-            Sector -22, Kamothe-410208<br><br>
+            Sector -22, Kamothe-410209<br><br>
             <strong>Phone:</strong> 8976635770<br>
             <strong>Phone:</strong> 9221803185<br>
             <strong>Email:</strong> aditismita927@gmail.com<br>

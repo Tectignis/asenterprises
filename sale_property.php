@@ -78,6 +78,18 @@ include("include/config.php");
     transition: all 0.3s ease-in-out 0s;
     text-decoration: underline;
 }
+@media screen and (max-width:768px){
+ .sortform{ height: 110px;
+    font-size: 15px;
+ }
+ .sortbtn{
+  margin-left:72px;
+ }
+}
+.image{
+  height:340px;
+  width:420px;
+}
   </style>
 </head>
 
@@ -97,7 +109,7 @@ include("include/config.php");
  
   <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
-      <div class="row" style="background:white; border-radius:10px; ">
+      <div class="row sortform" style="background:white; border-radius:10px; ">
           <form method="post">
                         <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
                     		<div class="row" style="height:60px;">
@@ -123,7 +135,7 @@ include("include/config.php");
                         <input type="checkbox" class="bhk" id="bhk4" value="4BHK" name="rk1[ ]">&nbsp;<label for="bhk4">4 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						   <input type="submit" class="btn btn-primary" value="Sort" name="sortbhk" onclick="sort_listing();">
+						   <input type="submit" class="btn btn-primary sortbtn" value="Sort" name="sortbhk" onclick="sort_listing();">
 						   
                         </div>
                             
@@ -152,7 +164,7 @@ include("include/config.php");
           
             <div class="member">
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img image">
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                 <div class="tag">
@@ -188,7 +200,7 @@ include("include/config.php");
           
           <div class="member">
          
-            <div class="member-img" style="height:340px; width:420px;">
+            <div class="member-img image">
         
               <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
               <div class="tag">

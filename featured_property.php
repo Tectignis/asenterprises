@@ -8,7 +8,7 @@ include("include/config.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Resale Property</title>
+  <title>Featured Property</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -62,11 +62,11 @@ include("include/config.php");
     padding: 5px 15px;
   }
 
-  .r_property{
+  .ddhome{
     color:#106eea !important;
 
   }
-  .r_property:before{
+  .ddhome:before{
   content: "";
     position: absolute;
     width: 100%;
@@ -146,7 +146,7 @@ include("include/config.php");
 </div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> RESALE  <span>PROPERTIES </span></h3>
+          <h3> FEATURED <span>PROPERTIES </span></h3>
           <!-- <p>...</p> -->
         </div>
 
@@ -155,7 +155,7 @@ include("include/config.php");
                       if(isset($_POST['sortbhk'])){   
                         $rk=$_POST['rk1'];
                         foreach($rk as $bhk){
-                         $sql=mysqli_query($conn,"select * from `property` where flat='$bhk' and property='resale'");
+                         $sql=mysqli_query($conn,"select * from `property` where flat='$bhk' and feature='YES'");
                         
                  
                       while($arr=mysqli_fetch_array($sql)){
@@ -191,7 +191,7 @@ include("include/config.php");
           </div>
           <?php } } 
         } else{
-          $sql=mysqli_query($conn,"select * from `property` where property='resale'");
+          $sql=mysqli_query($conn,"select * from `property` where  feature='YES'");
                     
                  
           while($arr=mysqli_fetch_array($sql)){
@@ -200,7 +200,7 @@ include("include/config.php");
           
           <div class="member">
          
-            <div class="member-img image" >
+            <div class="member-img image">
         
               <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
               <div class="tag">

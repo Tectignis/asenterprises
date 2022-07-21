@@ -78,7 +78,21 @@ include("include/config.php");
     transition: all 0.3s ease-in-out 0s;
     text-decoration: underline;
 }
+
+@media screen and (max-width:768px){
+ .sortform{ height: 110px;
+    font-size: 15px;
+ }
+ .sortbtn{
+  margin-left:72px;
+ }
+}
+.image{
+  height:340px;
+  width:420px;
+}
   </style>
+  
 </head>
 
 <body>
@@ -97,14 +111,12 @@ include("include/config.php");
  
   <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
-      <div class="row" style="background:white; border-radius:10px; ">
+      <div class="row sortform" style="background:white; border-radius:10px; ">
           <form method="post">
                         <div class="option-bar d-none1 d-xl-block d-lg-block d-md-block d-sm-block">
                     		<div class="row" style="height:60px;">
-                   <div class="col-lg-2 col-md-2 col-sm-2" >
-                        
-                        </div>
-                        <div class="col-lg-8 col-md-12 col-sm-8" style="margin-top:9px;">
+                  
+                        <div class="col-lg-8 col-md-12 col-sm-12 col-12 " style="margin-top:9px;">
                      
                         <label>Sort by:</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <?php 
@@ -123,7 +135,7 @@ include("include/config.php");
                         <input type="checkbox" class="bhk" id="bhk4" value="4BHK" name="rk1[ ]">&nbsp;<label for="bhk4">4 BHK</label>
 						   
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						   <input type="submit" class="btn btn-primary" value="Sort" name="sortbhk" onclick="sort_listing();">
+						  <input type="submit" class="btn btn-primary sortbtn " value="Sort" name="sortbhk" onclick="sort_listing();">
 						   
                         </div>
                             
@@ -134,8 +146,8 @@ include("include/config.php");
 </div>
         <div class="section-title">
           <!-- <h2>Team</h2> -->
-          <h3> NEW  <span>PROJECT </span></h3>
-          <!-- <p>...</p> -->
+          <h3 class=""> NEW  <span>PROJECT </span></h3>
+        
         </div>
 
         <div class="row">
@@ -152,7 +164,7 @@ include("include/config.php");
           
             <div class="member">
            
-              <div class="member-img" style="height:340px; width:420px;">
+              <div class="member-img image">
           
                 <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                 <div class="tag">
@@ -188,7 +200,7 @@ include("include/config.php");
           
           <div class="member">
          
-            <div class="member-img" style="height:340px; width:420px;">
+            <div class="member-img image">
         
               <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
               <div class="tag">

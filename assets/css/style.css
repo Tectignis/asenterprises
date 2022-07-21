@@ -1043,12 +1043,13 @@ section {
 .portfolio-details .portfolio-info {
   padding: 30px;
   box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+  height:76%;
 }
 .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #eee;
 }
 .portfolio-details .portfolio-info ul {
