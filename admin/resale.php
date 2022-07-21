@@ -4,7 +4,36 @@ session_start();
 if(!isset($_SESSION['id'])){
     header("location:adminlogin.php");
 }
-?>
+if(isset($_GET['delid'])){
+  $id=mysqli_real_escape_string($conn,$_GET['delid']);
+  $sql=mysqli_query($conn,"delete from property where id='$id'");
+  if($sql=1){
+      header("location:resale.php");
+  }
+  }
+ 
+  if(isset($_POST['resaleedit'])){
+    $id=$_POST['propertyid'];
+    $building_name = $_POST['building_name'];
+    $flat = $_POST['flat'];
+    $location = $_POST['location'];
+    $builtup_area = $_POST['builtup_area'];
+    $carpet_area = $_POST['carpet_area'];
+    $property = $_POST['property'];
+   
+    $sql="UPDATE `property` SET `building_name`='$building_name',`flat`='$flat',`location`='$location',`builtup_area`='$builtup_area',`carpet_area`='$carpet_area',`property`='$property' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)){
+      // header("location:new_project.php");
+      echo "<script>alert('Successfully Updated');</script>";
+   } else {
+      echo "<script> alert ('connection failed !');window.location.href='resale.php'</script>";
+   }
+  }
+  
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,14 +158,14 @@ if(!isset($_SESSION['id'])){
                         <td>
 
                           <button type="button" class="btn btn-primary btn-rounded btn-icon resaleedit1 btn-sm"
-                            data-toggle="modal" data-id='<?php echo $arr[' id']; ?>'
+                            data-toggle="modal" data-id='<?php echo $arr['id']; ?>'
                             style="color: aliceblue"> <i class="fas fa-pen"></i> </button>
 
                           <a href="resale.php?delid=<?php echo $arr['id']; ?>"><button type="button"
                               class="btn btn-danger btn-rounded btn-icon btn-sm" style="color: aliceblue"> <i
                                 class="fas fa-trash"></i> </button></a>
 
-                          <a href="../../info.php"><button type="button"
+                                <a href="../info.php?id=<?php echo $arr['id'];?>"><button type="button"
                               class="btn btn-primary btn-rounded btn-icon btn-sm" data-id='<?php echo $arr[' id']; ?>'
                               style="color: aliceblue"> <i class="fas fa-eye"></i> </button></a>
 

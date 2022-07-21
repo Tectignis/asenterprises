@@ -94,21 +94,26 @@ border-bottom-right-radius: .3rem;
                   <p align="center">Please login to your account</p><br>
 
                   <div class="form-outline mb-4">
-                    <input type="email" id="email" class="form-control"
+                    <input type="email" id="email" class="form-control active"
                     name="email"
-                      placeholder="Enter Email address">
-                    <label class="form-label" >Email</label>
+                    >
+                    <label class="form-label" for="form3Example3" style="margin-left: 0px;">Email address</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 83.2px;"></div><div class="form-notch-trailing"></div></div>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
-                    <label class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control active">
+                    <label class="form-label" for="form3Example3" style="margin-left: 0px;">Password</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 60px;"></div><div class="form-notch-trailing"></div></div>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="login" name="login" id="login" value="login">Login</button>
                     <a class="text-muted" href="forgotpassword.php">Forgot password?</a>
                   </div>
+
+
+                  
                 </form>
 
               </div>

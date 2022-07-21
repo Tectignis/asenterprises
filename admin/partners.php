@@ -160,28 +160,26 @@ if(isset($_GET['delid'])){
 
                   </table>
 
-                  <div class="modal fade closemaual" id="dnkModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <form method="post">
-                          <div class="modal-body body3">
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn-close btn btn-secondary"
-                              data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" name="resaleedit">Save changes</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="modal fade closemaual" id="dnkModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+      <div class="modal-body body4">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" name="partneredit1">Save changes</button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -247,25 +245,25 @@ include("_includes/footer.php");
       });
     });
   </script>
-  <script>
-    $(document).ready(function () {
-      $('.resaleedit1').click(function () {
-        let dnk1 = $(this).data('id');
+    <script>
+          $(document).ready(function(){
+          $('.partneredit').click(function(){
+            let dnk2 = $(this).data('id');
 
-        $.ajax({
-          url: 'check.php',
-          type: 'post',
-          data: { dnk1: dnk1 },
-          success: function (response3) {
-            $('.body3').html(response3);
-            $('#dnkModal2').modal('show');
-          }
-        });
-      });
+            $.ajax({
+            url: 'check.php',
+            type: 'post',
+            data: {dnk2: dnk2},
+            success: function(response4){ 
+              $('.body4').html(response4);
+              $('#dnkModal3').modal('show'); 
+            }
+          });
+          });
 
 
-    });
-  </script>
+          });
+          </script>
 </body>
 
 </html>
