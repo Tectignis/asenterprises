@@ -175,7 +175,7 @@ include("include/config.php");
         <div class="row">
         <?php 
                      
-                     $sql=mysqli_query($conn,"select * from `property` where feature='YES' limit 4");
+                     $sql=mysqli_query($conn,"select * from `property` where property='project' AND feature='YES' limit 4");
                  
                       while($arr=mysqli_fetch_array($sql)){
                      ?>
