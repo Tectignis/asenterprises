@@ -38,7 +38,11 @@ include("include/config.php");
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
- 
+ <style>
+  .pdisable p:last-child{
+    visibility:hidden;
+  }
+ </style>
 </head>
 
 <body>
@@ -69,9 +73,9 @@ include("include/config.php");
           <div class="col-lg-8">
          
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+              <div class="swiper-wrapper align-items-center" style="height:350px; width:420px;">
 
-                <div class="swiper-slide" style="height:340px; width:420px;">
+                <div class="swiper-slide" style="height:350px; width:420px;">
                 <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image'];?>" alt=""></a>
                 </div>
 
@@ -131,7 +135,7 @@ include("include/config.php");
 
               ?>
               
-                <li><?php 
+                <li class="pdisable"><?php 
                 $links = array();
                 $parts =explode(',',$arr['amenities']);
                 foreach ($parts as $amenities){
