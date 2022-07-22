@@ -29,7 +29,7 @@ include("include/config.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="ribbon.css">
+  <link rel="stylesheet" href="assets/css/ribbon.css">
   <!-- <script src="toruskit.js"></script> -->
 
   <!-- =======================================================
