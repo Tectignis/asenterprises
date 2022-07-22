@@ -88,12 +88,12 @@ if(isset($_GET['delid'])){
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Partners Table</h1>
+              <h1>Partners</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Partners Table</li>
+                <li class="breadcrumb-item active">Partners</li>
               </ol>
             </div>
           </div>
