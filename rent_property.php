@@ -79,11 +79,11 @@ include("include/config.php");
     text-decoration: underline;
 }
 @media screen and (max-width:768px){
- .sortform{ height: 110px;
-    font-size: 15px;
+  .sortform{ height: 110px;
+    font-size: 17px;
  }
  .sortbtn{
-  margin-left:72px;
+  margin-left:90px;
  }
 }
 .image{

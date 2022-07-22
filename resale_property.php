@@ -79,17 +79,22 @@ include("include/config.php");
     text-decoration: underline;
 }
 @media screen and (max-width:768px){
- .sortform{ height: 110px;
-    font-size: 15px;
+  .sortform{ height: 110px;
+    font-size: 17px;
  }
  .sortbtn{
-  margin-left:72px;
+  margin-left:90px;
  }
 }
 .image{
   height:340px;
   width:420px;
 }
+.img{
+  width:300px;
+  
+}
+
   </style>
 </head>
 
@@ -166,7 +171,7 @@ include("include/config.php");
            
               <div class="member-img image">
           
-                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+                <img class="img" src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                 <div class="tag">
                <span><?php echo $arr['property'];?></span>
                       </div>
@@ -202,7 +207,7 @@ include("include/config.php");
          
             <div class="member-img image" >
         
-              <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+              <img class="img" src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
               <div class="tag">
              <span><?php echo $arr['property'];?></span>
                     </div>

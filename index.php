@@ -90,7 +90,16 @@ include("include/config.php");
   height:340px;
   width:420px;
 }
- 
+.img{
+  width:300px;
+  height:352px;
+}
+@media screen and (max-width:768px){
+  .img1{
+    width:317px;
+  height:352px;
+  }
+}
   </style>
 
 </head>
@@ -185,7 +194,7 @@ include("include/config.php");
            
               <div class="member-img image" >
           
-                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+                <img class="img img1" src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
@@ -241,7 +250,7 @@ include("include/config.php");
               <div class="member-img image">
 
           
-                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+                <img class="img img1" src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
@@ -294,7 +303,7 @@ include("include/config.php");
            
               <div class="member-img image">
           
-                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+                <img class="img img1" src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
              
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
@@ -347,7 +356,7 @@ include("include/config.php");
               <div class="member-img image" >
 
           
-                <img src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
+                <img class="img img1 " src="admin/dist/img/<?php echo $arr['image'];?>" class="img-fluid" alt="">
                
                 <div class="price-box">
               <span>₹<?php echo $arr['price'];?></span>
