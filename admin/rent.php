@@ -124,7 +124,7 @@ if(!isset($_SESSION['id'])){
                         <th>Location</th>
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
-                        <th>Property</th>
+                        <th>Type</th>
                         <th>Action</th>
 
                       </tr>

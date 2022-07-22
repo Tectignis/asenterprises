@@ -141,7 +141,7 @@ if(isset($_GET['statusno'])){
                         <th>Location</th>
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
-                        <th>Property</th>
+                        <th>Type</th>
                         <th>Features</th>
                         <th>Action</th>
                       </tr>

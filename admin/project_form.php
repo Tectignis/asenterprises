@@ -135,7 +135,7 @@ if(!isset($_SESSION['id'])){
               <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                    <label>Property</label>
+                    <label> Property Type</label>
                       <select class="select2" data-placeholder="Select a State" name="property" style="width: 100%;">
                       <option value="" selected disabled>Select</option>
                         <option value="project">New Project</option>
