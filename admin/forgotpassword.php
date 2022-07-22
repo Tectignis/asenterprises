@@ -48,7 +48,7 @@ require 'PHPMailer/src/Exception.php';
 
 				//Recipients
 				$mail->setFrom('divyani.keshari@tectignis.in', 'ASENTERPRISES');
-				$mail->addAddress($email, 'Tectignis Employee');     //Add a recipient
+				$mail->addAddress($email, 'ASENTERPRISES');     //Add a recipient
 				
 				//Content
 				$mail->isHTML(true);                                  //Set email format to HTML
