@@ -8,7 +8,7 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-4 footer-contact">
-          <h3>ASENTERPRISES<span>.</span></h3>
+          <h3>ASENTERPRISES</h3>
           <p>
            Slyon Homes CHS, <br>
            Shop No.6, Plot No.87,<br>
