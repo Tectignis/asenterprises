@@ -18076,8 +18076,4 @@ span[data-tor*=":reveal("] {
 }
 [data-tor~="bounce"] {
   --tor-loop-timing: cubic-bezier(0.4, 0, 0, 1.4) !important;
-<<<<<<< HEAD
 } /*! purgecss end ignore */
-=======
-} /*! purgecss end ignore */
->>>>>>> f5f854a80eeb07e5e235d0a0c326af53ecb6d534
