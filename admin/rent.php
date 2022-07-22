@@ -106,11 +106,11 @@ if(!isset($_SESSION['id'])){
 
 
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title" style="padding-top:25px;">List of Rent</h3>
+                <div class="card-header" style="padding-top:0px;">
+                  <h3 class="card-title" style="padding-top:30px;margin-left:10px;">List of Rent</h3>
                   <div class="card-tools my-3" style="text-align:end;">
                     <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
-                      data-original-title="Click here to Add project">Add Rent</a>
+                      data-original-title="Click here to Add project" style="margin-right:20px;">Add Rent</a>
                   </div>
                 </div>
                 <!-- /.card-header -->

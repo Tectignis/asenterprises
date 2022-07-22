@@ -109,11 +109,11 @@ if(isset($_GET['delid'])){
 
 
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title" style="padding-top:25px;">List of Resale</h3>
+                <div class="card-header" style="padding:0px;">
+                  <h3 class="card-title" style="padding-top:25px;margin-left:10px;">List of Resale</h3>
                   <div class="card-tools my-3" style="text-align:end;">
                     <a class="btn btn-primary" href="project_form.php" data-tt="tooltip" title=""
-                      data-original-title="Click here to Add project">Add Project</a>
+                      data-original-title="Click here to Add project" style="margin-right:20px;">Add Project</a>
                   </div>
                 </div>
                 <!-- /.card-header -->
