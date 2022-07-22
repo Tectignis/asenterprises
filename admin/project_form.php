@@ -9,6 +9,7 @@ if(!isset($_SESSION['id'])){
       $chkl2="";
       $icon="";
         $building_name = $_POST['building_name'];
+        $flat = $_POST['flat'];
         $property = $_POST['property'];
         $price = $_POST['price'];
         $carpet_area = $_POST['carpet_area'];
@@ -45,7 +46,7 @@ if(!isset($_SESSION['id'])){
 
         $features = "NO";
 
-        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl2','$description','$image1','$image2','$image3','$image4','$features')";
+        $query = "INSERT INTO `property`(`building_name`, `property`, `price`, `carpet_area`, `builtup_area`, `location`, `water_source`, `furnishing`, `facing`, `power_backup`, `age_of_construction`, `amenities`,`description`,`image`,`image2`,`image3`,`image4`,`feature`,`flat`) VALUES ('$building_name','$property','$price','$carpet_area','$builtup_area','$location','$water_source','$furnishing','$facing','$power_backup','$age_of_construction','$chkl2','$description','$image1','$image2','$image3','$image4','$features','$flat')";
         if (mysqli_query($conn,$query)){
           echo "<script> alert ('New record has been added successfully !');</script>";
        } else {
