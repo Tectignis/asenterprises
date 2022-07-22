@@ -86,7 +86,7 @@ if(!isset($_SESSION['id'])){
                 <p>New Project</p>
               </div>
               <div class="icon">
-                <!-- <i class="ion ion-bag"></i> -->
+                <i class="ion ion-home"></i>
               </div>
               <a href="new_project.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -105,7 +105,8 @@ if(!isset($_SESSION['id'])){
                 <p>Resale</p>
               </div>
               <div class="icon">
-                <!-- <i class="ion ion-stats-bars"></i> -->
+                <i class="ion ion-stats-bars"></i>
+                
               </div>
               <a href="resale.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -124,7 +125,7 @@ if(!isset($_SESSION['id'])){
                 <p>Rent </p>
               </div>
               <div class="icon">
-                <!-- <i class="ion ion-person-add"></i> -->
+              <i class="ion ion-stats-bars"></i>
               </div>
               <a href="rent.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -142,7 +143,7 @@ if(!isset($_SESSION['id'])){
                 <p>Enquiry </p>
               </div>
               <div class="icon">
-                <!-- <i class="ion ion-person-add"></i> -->
+                <i class="ion ion-person"></i>
               </div>
               <a href="contactus.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
