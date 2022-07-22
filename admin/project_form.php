@@ -140,7 +140,7 @@ if(!isset($_SESSION['id'])){
                     <label> Property Type</label>
                       <select class="select2" data-placeholder="Select a State" name="property" style="width: 100%;">
                       <option value="" selected disabled>Select</option>
-                        <option value="project">New Project</option>
+                        <option value="New project">New Project</option>
                         <option value="resale">Resale</option>
                         <option value="rent">Rent</option>
 
