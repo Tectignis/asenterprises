@@ -121,12 +121,12 @@ if(isset($_GET['delid'])){
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Property ID</th>
+                        <th>PID</th>
                         <th>Building Name</th>
                         <th>Location</th>
                         <th>Build-up Area</th>
                         <th>Carpet Area</th>
-                        <th>Property</th>
+                        <th>Type</th>
                         <th>Action</th>
 
                       </tr>
