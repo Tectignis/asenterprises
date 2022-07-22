@@ -42,6 +42,7 @@ include("include/config.php");
   .pdisable p:last-child{
     visibility:hidden;
   }
+  
  </style>
 </head>
 
@@ -73,26 +74,27 @@ include("include/config.php");
           <div class="col-lg-8">
          
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center" style="height:350px; width:420px;">
+              <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide" style="height:350px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image'];?>" alt=""></a>
+                <div class="swiper-slide" >
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img  class="photo" src="admin/dist/img/<?php echo $arr['image'];?>" 
+                style="height:405px; width:740px;" alt=""></a>
                 </div>
 
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image2'];?>" alt=""></a>
-                </div>
-
-
-                
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image3'];?>" alt=""></a>
+                <div class="swiper-slide">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img class="photo" src="admin/dist/img/<?php echo $arr['image2'];?>" style="height:405px; width:740px;" alt=""></a>
                 </div>
 
 
                 
-                <div class="swiper-slide" style="height:340px; width:420px;">
-                <a href="info.php?id=<?php echo $arr['id'];?>"><img src="admin/dist/img/<?php echo $arr['image4'];?>" alt=""></a>
+                <div class="swiper-slide">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img class="photo" src="admin/dist/img/<?php echo $arr['image3'];?>" style="height:405px; width:740px;" alt=""></a>
+                </div>
+
+
+                
+                <div class="swiper-slide">
+                <a href="info.php?id=<?php echo $arr['id'];?>"><img class="photo" src="admin/dist/img/<?php echo $arr['image4'];?>" style="height:405px; width:740px;" alt=""></a>
                 </div>
 
 
