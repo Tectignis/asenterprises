@@ -63,7 +63,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-      Designed by <a href="https://tectignis.in">TECTIGNIS IT SOLUTIONS.</a>
+      Designed by <a href="https://tectignis.in" target="_blank">TECTIGNIS IT SOLUTIONS.</a>
     </div>
   </div>
 </footer><!-- End Footer -->
