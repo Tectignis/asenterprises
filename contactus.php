@@ -104,7 +104,7 @@ echo 'connection failed';
               <h3>Our Address</h3>
               <p> Slyon Homes CHS,
            Shop No.6, Plot No.87,
-            Sector -22, Kamothe-410208</p>
+            Sector -22, Kamothe-410209</p>
             </div>
           </div>
 
